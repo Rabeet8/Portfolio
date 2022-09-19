@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--divinectorweb.com-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap 5 Slider With Text Animation</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+ 
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+	<nav id = "#"  class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    
+		<div class="container">
+			<a class="navbar-brand" href="#">Syed Rabeet</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#about">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#projects">Projects</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators">
+		<div class="carousel-indicators">
+			<button aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators" type="button"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img alt="..." class="d-block w-100" src="./images/Web.jpeg">
+				<div class="carousel-caption">
+					<h5 class="animated bounceInRight" style="animation-delay: 1s">Web Developement</h5>
+					<p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">Eager to Develop Websites That Can Stand Out From The Rest</p>
+				
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img alt="..." class="d-block w-100" src="./images/blockchain.jpg">
+				<div class="carousel-caption">
+					<h5 class="animated bounceInRight" style="animation-delay: 1s">Blockchain Developement</h5>
+					<p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">Learning Blockchain Developement From BlockshipDAO And LearnWeb3DAO</p>
+					
+				</div>
+        			</div>
+			<div class="carousel-item">
+				<img alt="..." class="d-block w-100" src="./images/writing.jpg">
+				<div class="carousel-caption">
+					<h5 class="animated bounceInRight" style="animation-delay: 1s">Blockchain/Web3 Writer</h5>
+					<p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">Been Writing Articels Related to Blockchain/Web3 on Hashnode.</p>
+			
+				</div>
+			</div>
+		</div><button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="visually-hidden">Previous</span></button> <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="visually-hidden">Next</span></button>
+	</div>
+  <br>
+  <div class="container" >
+    <section id = "about">
+      <h1 class = "text-center">About</h1>
+      <br>
+        <div class="card mb-3 mx-auto" style="max-width: 1000px;">
+          <div class="row g-0 ">
+            <div class="col-md-4 ">
+              <img src="./images/pfp.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Syed Rabeet-Ur-Rehman</h5>
+                <p class="card-text">I am a student Karachi University (UBIT), Currently learning blockchain development from BlockshipDAO and LearnWeb3DAO, I am also an Ambassador of BlockshipDAO.
+              <br>
+              <br>
+                  I am writing blockchain/web3 related articles on Hashnode and 2 of my article has been published on LearnWeb3DAO.
+                </p>
+              
+                You can check the link.
+                <br>
+                <br>
+                <a href="https://blog.learnweb3.io/" target=”_blank”><button class="btn btn-primary">Articles</button></a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <br>
+  <section id = "projects">
+
+    <div class="container">
+      <h1 class = "text-center">Projects</h1>
+      <br>
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card shadow" style="width: 20rem;">
+            <div class="inner">
+              <img src="./images/CryptoCurrency_1_50.jpg" class="card-img-top" alt="...">
+             </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Cryptocurrency Tracker</h5>
+              <p class="card-text">It is a live Cryptocurrency tracker where a user can have a track of prices, volume and market cap of different coins</p>
+              <a   href="https://crypto-currency-tracker-eta.vercel.app/"target=”_blank” class="btn btn-primary">Live Demo</a>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow" style="width: 20rem;">
+            <div class="inner">
+             <img src="./images/filter app.png" class="card-img-top" alt="...">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Filter-User-App</h5>
+              <p class="card-text">A Random User Api Fetcher, used to filter out different users  by searching name as well as country and city</p>
+              <a  href="https://rabeet-filter-user-app.netlify.app/"  target=”_blank” class="btn btn-primary">Live Demo</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow" style="width: 20rem;">
+            <div class="inner">
+              <img src="./images/Advice_APP_1028x560.jpg" class="card-img-top" alt="...">
+             </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Advice App</h5>
+              <p class="card-text">It is a random advice app made using react. For fecthing different advice APIs, Axios is used
+              </p>
+              <a  href="https://advice-app-mu.vercel.app/"  target=”_blank” class="btn btn-primary">Live Demo</a>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    </div>
+  </section>
+<br>
+<br>
+<br>
+<section id="contact" class="contact">
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2 class="text-center">Contact</h2>
+      <p class="text-center">Get In Touch With Me</p>
+    </div>
+  </div>
+<div class="container">
+
+  <div class="row mt-5">
+
+    <div class="col-lg-4">
+      <div class="info">
+
+        <div class="email">
+          <i class="ri-mail-line"></i>
+          <h4>Email:</h4>
+          <p>syedrabeet2002@gmail.com</p>
+        </div>
+
+        <div class="phone">
+          <i class="ri-phone-line"></i>
+          <h4>Call:</h4>
+          <p>+92-3212335464</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-lg-8 mt-5 mt-lg-0">
+
+      <form action="https://formsubmit.co/syedrabeet2002@gmail.com" method="post" role="form" >
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+          </div>
+          <div class="col-md-6 form-group mt-3 mt-md-0">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+        </div>
+        <div class="form-group mt-3">
+          <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+        </div>
+        <br>
+        <div ><button type="submit"  class="btn btn-primary ">Send Message</button></div>
+       
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<br>
+
+<footer>
+  <div class="container" style="padding: 20px 0;" align="center">
+      <a href="https://twitter.com/CuriousRabeet" target=”_blank”>
+        <ion-icon co size="large" name="logo-twitter"></ion-icon>
+      </a>
+
+      <a href="https://github.com/Rabeet8"  target=”_blank”>
+        <ion-icon  size="large" name="logo-github"></ion-icon>
+      </a>
+          <a href="https://www.linkedin.com/in/syed-rabeet-5308341a4/" target=”_blank”>
+            <ion-icon  size="large" name="logo-linkedin"></ion-icon>
+              </a>       
+  </div>
+  <div style="background: #0b0b0b;">
+      <p style="color: #ffffff; padding: 15px 0;" align="center">
+          &copy; 2022 Copyright:Created By: Syed Rabeet</a>
+      </p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script> 
+ <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js">
+</script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js">
+</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+	</script> 
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js">
+	</script> 
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js">
+	</script> 
+  <script src="script.js"></script>
+</body>
+</html>
