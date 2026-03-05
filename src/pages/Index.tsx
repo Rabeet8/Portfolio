@@ -1,14 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect } from "react";
+import { GooeyText } from "@/components/ui/gooey-text-morphing";
+import { HeroSection } from "@/components/HeroSection";
 
 const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+  const [showHero, setShowHero] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowHero(true);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!showHero) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <GooeyText
+          texts={["Welcome", "Creative", "Developer", "Designer"]}
+          morphTime={1.5}
+          cooldownTime={0.5}
+          textClassName="text-5xl md:text-7xl font-bold text-foreground"
+        />
       </div>
-    </div>
-  );
+    );
+  }
+
+  return <HeroSection />;
 };
 
 export default Index;
