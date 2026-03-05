@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
 import { HeroSection } from "@/components/HeroSection";
+import { ScrollShowcase } from "@/components/ScrollShowcase";
+import { TimelineSection } from "@/components/TimelineSection";
 
 const Index = () => {
   const [showHero, setShowHero] = useState(false);
@@ -25,7 +27,13 @@ const Index = () => {
     );
   }
 
-  return <HeroSection />;
+  return (
+    <div>
+      <HeroSection />
+      <ScrollShowcase />
+      <TimelineSection />
+    </div>
+  );
 };
 
 export default Index;
