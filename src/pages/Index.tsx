@@ -8,7 +8,7 @@ const Index = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowHero(true);
-    }, 4000);
+    }, 6000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -16,10 +16,10 @@ const Index = () => {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background">
         <GooeyText
-          texts={["Welcome", "Creative", "Developer", "Designer"]}
+          texts={["Product Engineer", "Researcher", "Community Builder"]}
           morphTime={1.5}
           cooldownTime={0.5}
-          textClassName="text-5xl md:text-7xl font-bold text-foreground"
+          textClassName="text-4xl md:text-7xl font-bold text-foreground"
         />
       </div>
     );
