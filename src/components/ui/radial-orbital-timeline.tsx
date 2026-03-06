@@ -164,9 +164,9 @@ export default function RadialOrbitalTimeline({
           className="absolute inset-0 flex items-center justify-center"
         >
           {/* Orbital rings */}
-          <div className="absolute w-[400px] h-[400px] rounded-full border border-border/20" />
-          <div className="absolute w-[300px] h-[300px] rounded-full border border-border/10" />
-          <div className="absolute w-[200px] h-[200px] rounded-full border border-border/5" />
+          <div className="absolute w-[400px] h-[400px] rounded-full border border-foreground/20" />
+          <div className="absolute w-[300px] h-[300px] rounded-full border border-foreground/15" />
+          <div className="absolute w-[200px] h-[200px] rounded-full border border-foreground/10" />
 
           {/* Center dot */}
           <div className="absolute w-3 h-3 rounded-full bg-foreground/50" />
