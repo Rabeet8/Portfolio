@@ -163,13 +163,14 @@ export default function RadialOrbitalTimeline({
           ref={orbitRef}
           className="absolute inset-0 flex items-center justify-center"
         >
-          {/* Orbital rings */}
-          <div className="absolute w-[400px] h-[400px] rounded-full border border-foreground/20" />
-          <div className="absolute w-[300px] h-[300px] rounded-full border border-foreground/15" />
-          <div className="absolute w-[200px] h-[200px] rounded-full border border-foreground/10" />
+          {/* Single main orbital ring */}
+          <div className="absolute w-[400px] h-[400px] rounded-full border-2 border-foreground/30" />
 
-          {/* Center dot */}
-          <div className="absolute w-3 h-3 rounded-full bg-foreground/50" />
+          {/* Gradient center orb */}
+          <div className="absolute w-10 h-10 rounded-full" style={{
+            background: 'radial-gradient(circle at 40% 40%, hsl(280 60% 65%), hsl(220 70% 55%), hsl(180 60% 50%))',
+            boxShadow: '0 0 20px hsla(220, 70%, 55%, 0.4), 0 0 40px hsla(280, 60%, 65%, 0.2)',
+          }} />
 
           {timelineData.map((item, index) => {
             const position = calculateNodePosition(index, timelineData.length);

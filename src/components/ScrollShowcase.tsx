@@ -2,7 +2,7 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 export function ScrollShowcase() {
   return (
-    <div className="flex flex-col overflow-hidden bg-background">
+    <div className="flex flex-col overflow-hidden bg-background pb-20">
       <ContainerScroll
         titleComponent={
           <div>
