@@ -4,7 +4,7 @@ import { TimelineSection } from "@/components/TimelineSection";
 
 const Index = () => {
   return (
-    <div>
+    <div className="space-y-0">
       <HeroSection />
       <ScrollShowcase />
       <TimelineSection />

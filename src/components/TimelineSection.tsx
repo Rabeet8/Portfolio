@@ -66,8 +66,8 @@ const timelineData = [
 
 export function TimelineSection() {
   return (
-    <section className="py-20 bg-background">
-      <div className="max-w-5xl mx-auto px-6 text-center mb-10">
+    <section className="py-10 bg-background">
+      <div className="max-w-5xl mx-auto px-6 text-center mb-6">
         <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
           How I Work
         </h2>
