@@ -80,9 +80,10 @@ export default function RuixenBentoCards() {
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+          {/* Row 1: 2 cards */}
           <PlusCard
-            className="md:col-span-1"
+            className="md:col-span-2"
             title={cardContents[0].title}
             description={cardContents[0].description}
           />
@@ -91,8 +92,9 @@ export default function RuixenBentoCards() {
             title={cardContents[1].title}
             description={cardContents[1].description}
           />
+          {/* Row 2: wide + narrow */}
           <PlusCard
-            className="md:col-span-1 lg:row-span-2"
+            className="md:col-span-2"
             title={cardContents[2].title}
             description={cardContents[2].description}
           />
@@ -101,22 +103,22 @@ export default function RuixenBentoCards() {
             title={cardContents[3].title}
             description={cardContents[3].description}
           />
+          {/* Row 3: narrow card + footer text */}
           <PlusCard
             className="md:col-span-1"
             title={cardContents[4].title}
             description={cardContents[4].description}
           />
-        </div>
-
-        <div className="mt-16 text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Engineering Scalable Digital Products
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            I specialize in building modern web and mobile applications,
-            integrating AI and blockchain technologies while focusing on
-            performance, scalability, and clean architecture.
-          </p>
+          <div className="md:col-span-2 flex flex-col items-center justify-center p-8 md:p-12">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-center">
+              Engineering Scalable Digital Products
+            </h2>
+            <p className="text-muted-foreground text-lg text-center max-w-lg">
+              I specialize in building modern web and mobile applications,
+              integrating AI and blockchain technologies while focusing on
+              performance, scalability, and clean architecture.
+            </p>
+          </div>
         </div>
       </div>
     </section>

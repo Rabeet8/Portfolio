@@ -2,30 +2,27 @@
 import React, { useState, useEffect } from "react";
 
 const ICONS = [
-  // Frontend
-  { src: "https://svgl.app/library/react.svg", name: "React" },
-  { src: "https://svgl.app/library/nextjs_icon_dark.svg", name: "Next.js" },
-  { src: "https://svgl.app/library/javascript.svg", name: "JavaScript" },
-  { src: "https://svgl.app/library/typescript.svg", name: "TypeScript" },
-  { src: "https://svgl.app/library/tailwindcss.svg", name: "TailwindCSS" },
-  { src: "https://svgl.app/library/materialui.svg", name: "MaterialUI" },
-  // Mobile
-  { src: "https://svgl.app/library/react.svg", name: "React Native" },
-  { src: "https://svgl.app/library/expo.svg", name: "Expo" },
-  // Backend
-  { src: "https://svgl.app/library/nodejs.svg", name: "Node.js" },
-  { src: "https://svgl.app/library/expressjs_dark.svg", name: "Express.js" },
-  { src: "https://svgl.app/library/fastapi.svg", name: "FastAPI" },
-  // Web3
-  { src: "https://svgl.app/library/solidity.svg", name: "Solidity" },
-  { src: "https://svgl.app/library/hardhat.svg", name: "Hardhat" },
-  // Cloud & DevOps
-  { src: "https://svgl.app/library/firebase.svg", name: "Firebase" },
-  { src: "https://svgl.app/library/google-cloud.svg", name: "Google Cloud" },
-  { src: "https://svgl.app/library/git.svg", name: "Git" },
-  { src: "https://svgl.app/library/github-dark.svg", name: "GitHub" },
-  // AI
-  { src: "https://svgl.app/library/openai_dark.svg", name: "OpenAI" },
+  // Frontend (Inner orbit)
+  { src: "https://svgl.app/library/react.svg", name: "React", color: "hsl(200, 95%, 50%)" },
+  { src: "https://svgl.app/library/nextjs_icon_dark.svg", name: "Next.js", color: "hsl(0, 0%, 60%)" },
+  { src: "https://svgl.app/library/javascript.svg", name: "JavaScript", color: "hsl(50, 90%, 50%)" },
+  { src: "https://svgl.app/library/typescript.svg", name: "TypeScript", color: "hsl(210, 80%, 55%)" },
+  { src: "https://svgl.app/library/tailwindcss.svg", name: "TailwindCSS", color: "hsl(190, 90%, 50%)" },
+  { src: "https://svgl.app/library/materialui.svg", name: "MaterialUI", color: "hsl(210, 80%, 60%)" },
+  // Middle orbit
+  { src: "https://svgl.app/library/react.svg", name: "React Native", color: "hsl(200, 95%, 50%)" },
+  { src: "https://svgl.app/library/expo.svg", name: "Expo", color: "hsl(260, 70%, 60%)" },
+  { src: "https://svgl.app/library/nodejs.svg", name: "Node.js", color: "hsl(120, 55%, 45%)" },
+  { src: "https://svgl.app/library/expressjs_dark.svg", name: "Express.js", color: "hsl(0, 0%, 55%)" },
+  { src: "https://svgl.app/library/fastapi.svg", name: "FastAPI", color: "hsl(170, 70%, 45%)" },
+  { src: "https://svgl.app/library/solidity.svg", name: "Solidity", color: "hsl(220, 15%, 50%)" },
+  // Outer orbit
+  { src: "https://svgl.app/library/hardhat.svg", name: "Hardhat", color: "hsl(45, 90%, 55%)" },
+  { src: "https://svgl.app/library/firebase.svg", name: "Firebase", color: "hsl(35, 95%, 55%)" },
+  { src: "https://svgl.app/library/google-cloud.svg", name: "Google Cloud", color: "hsl(210, 80%, 55%)" },
+  { src: "https://svgl.app/library/git.svg", name: "Git", color: "hsl(10, 80%, 55%)" },
+  { src: "https://svgl.app/library/github-dark.svg", name: "GitHub", color: "hsl(260, 50%, 55%)" },
+  { src: "https://svgl.app/library/openai_dark.svg", name: "OpenAI", color: "hsl(160, 60%, 45%)" },
 ];
 
 function SemiCircleOrbit({
@@ -75,11 +72,14 @@ function SemiCircleOrbit({
               top: centerY - y - iconSize / 2,
             }}
           >
-            <div className="w-full h-full rounded-full bg-card border border-border flex items-center justify-center shadow-lg backdrop-blur-sm">
+            <div
+              className="w-full h-full rounded-lg flex items-center justify-center shadow-lg"
+              style={{ backgroundColor: icon.color }}
+            >
               <img
                 src={icon.src}
                 alt={icon.name}
-                className="w-1/2 h-1/2 object-contain brightness-0 invert"
+                className="w-1/2 h-1/2 object-contain brightness-0"
               />
             </div>
             <div
