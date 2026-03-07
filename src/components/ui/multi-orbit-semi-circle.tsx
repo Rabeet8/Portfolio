@@ -2,18 +2,48 @@
 import React, { useState, useEffect } from "react";
 
 const ICONS = [
+  // Frontend
   { src: "https://svgl.app/library/react.svg", name: "React" },
-  { src: "https://svgl.app/library/typescript.svg", name: "TypeScript" },
-  { src: "https://svgl.app/library/tailwindcss.svg", name: "Tailwind" },
-  { src: "https://svgl.app/library/figma.svg", name: "Figma" },
   { src: "https://svgl.app/library/nextjs_icon_dark.svg", name: "Next.js" },
+  { src: "https://svgl.app/library/javascript.svg", name: "JavaScript" },
+  { src: "https://svgl.app/library/typescript.svg", name: "TypeScript" },
+  { src: "https://svgl.app/library/tailwindcss.svg", name: "TailwindCSS" },
+  { src: "https://svgl.app/library/materialui.svg", name: "MaterialUI" },
+  // Mobile
+  { src: "https://svgl.app/library/react.svg", name: "React Native" },
+  { src: "https://svgl.app/library/expo.svg", name: "Expo" },
+  // Backend
   { src: "https://svgl.app/library/nodejs.svg", name: "Node.js" },
+  { src: "https://svgl.app/library/expressjs_dark.svg", name: "Express.js" },
+  { src: "https://svgl.app/library/fastapi.svg", name: "FastAPI" },
+  // Web3
+  { src: "https://svgl.app/library/solidity.svg", name: "Solidity" },
+  { src: "https://svgl.app/library/hardhat.svg", name: "Hardhat" },
+  // Cloud & DevOps
+  { src: "https://svgl.app/library/firebase.svg", name: "Firebase" },
+  { src: "https://svgl.app/library/google-cloud.svg", name: "Google Cloud" },
+  { src: "https://svgl.app/library/git.svg", name: "Git" },
+  { src: "https://svgl.app/library/github-dark.svg", name: "GitHub" },
+  // AI
+  { src: "https://svgl.app/library/openai_dark.svg", name: "OpenAI" },
 ];
 
-function SemiCircleOrbit({ radius, centerX, centerY, count, iconSize }: any) {
+function SemiCircleOrbit({
+  radius,
+  centerX,
+  centerY,
+  icons,
+  iconSize,
+}: {
+  radius: number;
+  centerX: number;
+  centerY: number;
+  icons: typeof ICONS;
+  iconSize: number;
+}) {
+  const count = icons.length;
   return (
     <>
-      {/* Semi-circle glow */}
       <div
         className="absolute"
         style={{
@@ -28,12 +58,10 @@ function SemiCircleOrbit({ radius, centerX, centerY, count, iconSize }: any) {
         }}
       />
 
-      {/* Orbit icons */}
-      {Array.from({ length: count }).map((_, index) => {
-        const angle = (index / (count - 1)) * 180;
+      {icons.map((icon, index) => {
+        const angle = count === 1 ? 90 : (index / (count - 1)) * 180;
         const x = radius * Math.cos((angle * Math.PI) / 180);
         const y = radius * Math.sin((angle * Math.PI) / 180);
-        const icon = ICONS[index % ICONS.length];
         const tooltipAbove = angle > 90;
 
         return (
@@ -54,7 +82,6 @@ function SemiCircleOrbit({ radius, centerX, centerY, count, iconSize }: any) {
                 className="w-1/2 h-1/2 object-contain brightness-0 invert"
               />
             </div>
-            {/* Tooltip */}
             <div
               className={`absolute left-1/2 -translate-x-1/2 px-2 py-1 rounded bg-card border border-border text-foreground text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none ${
                 tooltipAbove ? "bottom-full mb-2" : "top-full mt-2"
@@ -91,15 +118,40 @@ export default function MultiOrbitSemiCircle() {
         ? Math.max(28, baseWidth * 0.06)
         : Math.max(32, baseWidth * 0.07);
 
+  // Inner orbit: Frontend (6)
+  const innerIcons = ICONS.slice(0, 6);
+  // Middle orbit: Mobile + Backend + Web3 (6)
+  const middleIcons = ICONS.slice(6, 12);
+  // Outer orbit: Cloud/DevOps + AI (6)
+  const outerIcons = ICONS.slice(12, 18);
+
   return (
     <div className="w-full flex justify-center items-center bg-background">
       <div
         className="relative mx-auto"
         style={{ width: baseWidth, height: baseWidth * 0.55 }}
       >
-        <SemiCircleOrbit radius={baseWidth * 0.25} centerX={centerX} centerY={centerY} count={3} iconSize={iconSize} />
-        <SemiCircleOrbit radius={baseWidth * 0.37} centerX={centerX} centerY={centerY} count={4} iconSize={iconSize} />
-        <SemiCircleOrbit radius={baseWidth * 0.49} centerX={centerX} centerY={centerY} count={6} iconSize={iconSize} />
+        <SemiCircleOrbit
+          radius={baseWidth * 0.25}
+          centerX={centerX}
+          centerY={centerY}
+          icons={innerIcons}
+          iconSize={iconSize}
+        />
+        <SemiCircleOrbit
+          radius={baseWidth * 0.37}
+          centerX={centerX}
+          centerY={centerY}
+          icons={middleIcons}
+          iconSize={iconSize}
+        />
+        <SemiCircleOrbit
+          radius={baseWidth * 0.49}
+          centerX={centerX}
+          centerY={centerY}
+          icons={outerIcons}
+          iconSize={iconSize}
+        />
       </div>
     </div>
   );
