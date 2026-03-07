@@ -72,11 +72,14 @@ function SemiCircleOrbit({
               top: centerY - y - iconSize / 2,
             }}
           >
-            <div className="w-full h-full rounded-full bg-card border border-border flex items-center justify-center shadow-lg backdrop-blur-sm">
+            <div
+              className="w-full h-full rounded-lg flex items-center justify-center shadow-lg"
+              style={{ backgroundColor: icon.color }}
+            >
               <img
                 src={icon.src}
                 alt={icon.name}
-                className="w-1/2 h-1/2 object-contain brightness-0 invert"
+                className="w-1/2 h-1/2 object-contain brightness-0"
               />
             </div>
             <div
