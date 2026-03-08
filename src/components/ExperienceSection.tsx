@@ -5,20 +5,22 @@ const experienceData = [
     title: "2024",
     content: (
       <div>
-        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
+        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-1">
           Technyx System
         </h3>
-        <p className="text-foreground text-sm md:text-base font-normal mb-4">
-          Led the frontend architecture for a SaaS platform serving 50K+ users. Built a design system from scratch with React, TypeScript, and Tailwind CSS that reduced development time by 40%.
-        </p>
-        <p className="text-muted-foreground text-sm md:text-base font-normal mb-4">
-          Implemented complex data visualizations, real-time collaboration features, and optimized Core Web Vitals scores across the entire application.
-        </p>
+        <p className="text-sm text-muted-foreground mb-4">Software Engineer</p>
+        <ul className="list-disc list-outside pl-5 space-y-3 text-foreground text-sm md:text-base font-normal mb-4">
+          <li>Developed and optimized mobile applications using React Native CLI, delivering performant UI screens and improving overall app stability and user experience.</li>
+          <li>Engineered a multi-layer interactive SVG map system using react-native-svg, MaskedView, and Reanimated, implementing dynamic region highlighting, coordinate transformation logic, and animated zoom interactions while maintaining high rendering performance.</li>
+          <li>Collaborated closely with Product Managers and QA teams to identify, debug, and resolve critical issues, ensuring timely and high-quality releases.</li>
+          <li>Implemented new features and refined existing functionalities based on client feedback, aligning product improvements with user and business requirements.</li>
+          <li>Managed the complete release pipeline including build generation, store submission, versioning, and production rollout for iOS and Android apps.</li>
+        </ul>
         <div className="flex gap-2 flex-wrap">
-          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">React</span>
+          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">React Native</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">TypeScript</span>
-          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Tailwind CSS</span>
-          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Framer Motion</span>
+          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Reanimated</span>
+          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">SVG</span>
         </div>
       </div>
     ),
