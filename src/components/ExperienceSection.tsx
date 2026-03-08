@@ -2,7 +2,7 @@ import { Timeline } from "@/components/ui/timeline";
 
 const experienceData = [
   {
-    title: "2024",
+    title: "Apr 2025 - Present",
     content: (
       <div>
         <h3 className="text-lg md:text-xl font-semibold text-foreground mb-1">
@@ -26,23 +26,25 @@ const experienceData = [
     ),
   },
   {
-    title: "2023",
+    title: "Oct 2023 - Dec 2024",
     content: (
       <div>
-        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
-          Freelance Developer
+        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-1">
+          0xequity
         </h3>
-        <p className="text-foreground text-sm md:text-base font-normal mb-4">
-          Designed and developed responsive web applications for multiple clients across fintech, health-tech, and e-commerce. Focused on accessibility and performance optimization.
-        </p>
-        <p className="text-muted-foreground text-sm md:text-base font-normal mb-4">
-          Introduced component-driven development workflows and automated testing pipelines that improved code quality and deployment confidence.
-        </p>
+        <p className="text-sm text-muted-foreground mb-4">Software Engineer</p>
+        <ul className="list-disc list-outside pl-5 space-y-3 text-foreground text-sm md:text-base font-normal mb-4">
+          <li>Design, develop, and execute comprehensive test cases for smart contracts to ensure they function as expected.</li>
+          <li>Integrate smart contracts with frontend applications using Web3 libraries such as Ethers.js/Web3.js, enabling seamless interaction between decentralized backends and user interfaces.</li>
+          <li>Ensure that best practices are followed and that code is secure and efficient.</li>
+          <li>Implement and maintain automated testing frameworks (using tools like Hardhat) to validate the integrity and security of smart contracts.</li>
+          <li>Optimized front-end, achieving a 60% improvement in performance.</li>
+        </ul>
         <div className="flex gap-2 flex-wrap">
-          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Next.js</span>
-          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Figma</span>
-          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Node.js</span>
-          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">PostgreSQL</span>
+          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Solidity</span>
+          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Ethers.js</span>
+          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Hardhat</span>
+          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Web3</span>
         </div>
       </div>
     ),
