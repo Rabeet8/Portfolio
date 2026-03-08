@@ -34,39 +34,43 @@ const experienceData = [
         </h3>
         <p className="text-sm text-muted-foreground mb-4">Software Engineer</p>
         <ul className="list-disc list-outside pl-5 space-y-3 text-foreground text-sm md:text-base font-normal mb-4">
-          <li>Design, develop, and execute comprehensive test cases for smart contracts to ensure they function as expected.</li>
-          <li>Integrate smart contracts with frontend applications using Web3 libraries such as Ethers.js/Web3.js, enabling seamless interaction between decentralized backends and user interfaces.</li>
-          <li>Ensure that best practices are followed and that code is secure and efficient.</li>
-          <li>Implement and maintain automated testing frameworks (using tools like Hardhat) to validate the integrity and security of smart contracts.</li>
-          <li>Optimized front-end, achieving a 60% improvement in performance.</li>
+          <li>Designed and developed smart contracts, creating comprehensive test cases to validate contract logic, edge cases, and expected transaction behavior across different blockchain scenarios.</li>
+          <li>Implemented automated smart contract testing frameworks using Hardhat, enabling systematic validation of contract functionality, security constraints, and deployment readiness.</li>
+          <li>Built frontend modules that interact with blockchain networks, integrating smart contracts using Ethers.js/Web3.js to enable seamless user interaction with decentralized application features.</li>
+          <li>Integrated smart contracts with frontend interfaces and backend APIs, ensuring smooth communication between on-chain contract logic and off-chain application services.</li>
+          <li>Developed decentralized application using Next.js workflows by connecting user-facing frontend components with smart contract functions, enabling secure transaction execution and real-time blockchain interaction.</li>
         </ul>
         <div className="flex gap-2 flex-wrap">
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Solidity</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Ethers.js</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Hardhat</span>
+          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Next.js</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Web3</span>
         </div>
       </div>
     ),
   },
   {
-    title: "2022",
+    title: "Mar 2023 - Aug 2023",
     content: (
       <div>
-        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
-          Junior Developer & Designer
+        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-1">
+          Webners
         </h3>
-        <p className="text-foreground text-sm md:text-base font-normal mb-4">
-          Started freelancing as a UI/UX designer and frontend developer. Built portfolio projects and contributed to open-source design systems.
-        </p>
-        <p className="text-muted-foreground text-sm md:text-base font-normal mb-4">
-          Completed certifications in advanced CSS animations, Three.js, and interaction design. Won a local hackathon with a real-time collaboration tool.
-        </p>
+        <p className="text-sm text-muted-foreground mb-4">Software Engineer</p>
+        <ul className="list-disc list-outside pl-5 space-y-3 text-foreground text-sm md:text-base font-normal mb-4">
+          <li>Developed scalable web applications using React.js and Next.js, building modular and maintainable UI components to support modern decentralized application interfaces.</li>
+          <li>Integrated smart contracts into frontend applications using Ethers.js, enabling secure interaction with blockchain networks and execution of on-chain transactions from user interfaces.</li>
+          <li>Implemented wallet connectivity using RainbowKit and Web3 wallet SDKs, allowing users to securely connect wallets and authorize blockchain transactions within the application.</li>
+          <li>Integrated backend APIs with frontend applications, enabling real-time rendering of transaction data and dynamic updates from off-chain services.</li>
+          <li>Built decentralized application workflows by connecting frontend components with smart contract functions and backend services, enabling seamless interaction between users, APIs, and blockchain networks.</li>
+        </ul>
         <div className="flex gap-2 flex-wrap">
-          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">JavaScript</span>
-          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Three.js</span>
-          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">GSAP</span>
-          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">CSS</span>
+          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">React.js</span>
+          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Next.js</span>
+          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Ethers.js</span>
+          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">RainbowKit</span>
+          <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Web3</span>
         </div>
       </div>
     ),
