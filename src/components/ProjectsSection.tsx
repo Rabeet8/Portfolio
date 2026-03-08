@@ -162,6 +162,40 @@ export function ProjectsSection() {
       ),
     },
     {
+      title: "Thrive - Plant Care App",
+      description:
+        "Thrive is a comprehensive plant care mobile app that helps users track watering schedules and monitor plant growth through visual timelines, ensuring your houseplants remain healthy with timely reminders and easy logging of care activities.",
+      link: "https://github.com/Rabeet8/Thrive",
+      badges: ["Flutter", "Dart", "Firebase"],
+      content: (
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(2)}>
+          <img
+            src={projectThriveMain}
+            alt="Thrive Plant Care App"
+            loading="eager"
+            className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "ERC20 Factory - Token Creator",
+      description:
+        "This project allows users to quickly create ERC20 tokens without the need for coding. Create, customize, and tokenize — unlocking blockchain potential for everyone.",
+      link: "https://github.com/Rabeet8/ERC20Factory",
+      badges: ["Solidity", "Ethers.js", "React", "Web3"],
+      content: (
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(3)}>
+          <img
+            src={projectErc20Main}
+            alt="ERC20 Factory Token Creator"
+            loading="eager"
+            className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      ),
+    },
+    {
       title: "More Projects Coming Soon",
       description:
         "I'm constantly building and experimenting with new technologies. Stay tuned for more exciting projects spanning Web3, AI integrations, and full-stack applications.",
