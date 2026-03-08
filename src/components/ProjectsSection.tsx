@@ -12,6 +12,8 @@ import projectPromptKitLogin from "@/assets/project-promptkit-login.jpg";
 import projectPromptKitProfile from "@/assets/project-promptkit-profile.jpg";
 import projectPromptKitCost from "@/assets/project-promptkit-cost.jpg";
 import projectPromptKitToken from "@/assets/project-promptkit-token.jpg";
+import projectThriveMain from "@/assets/project-thrive-main.png";
+import projectErc20Main from "@/assets/project-erc20-main.png";
 
 interface ProjectImages {
   title: string;
@@ -26,6 +28,14 @@ const projectImages: ProjectImages[] = [
   {
     title: "PromptKit - AI Utility App",
     images: [projectPromptKitMain, projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken],
+  },
+  {
+    title: "Thrive - Plant Care App",
+    images: [projectThriveMain],
+  },
+  {
+    title: "ERC20 Factory - Token Creator",
+    images: [projectErc20Main],
   },
 ];
 
@@ -106,11 +116,7 @@ export function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<ProjectImages | null>(null);
 
   React.useEffect(() => {
-    const images = [projectSnapntradeMain, projectSnapntrade, projectSnapntradeLogin, projectPromptKitMain, projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken];
-    images.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
+    const images = [projectSnapntradeMain, projectSnapntrade, projectSnapntradeLogin, projectPromptKitMain, projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken, projectThriveMain, projectErc20Main];
   }, []);
 
   const openModal = (projectIndex: number) => {
@@ -149,6 +155,40 @@ export function ProjectsSection() {
           <img
             src={projectPromptKitMain}
             alt="PromptKit AI Utility App"
+            loading="eager"
+            className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Thrive - Plant Care App",
+      description:
+        "Thrive is a comprehensive plant care mobile app that helps users track watering schedules and monitor plant growth through visual timelines, ensuring your houseplants remain healthy with timely reminders and easy logging of care activities.",
+      link: "https://github.com/Rabeet8/Thrive",
+      badges: ["Flutter", "Dart", "Firebase"],
+      content: (
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(2)}>
+          <img
+            src={projectThriveMain}
+            alt="Thrive Plant Care App"
+            loading="eager"
+            className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "ERC20 Factory - Token Creator",
+      description:
+        "This project allows users to quickly create ERC20 tokens without the need for coding. Create, customize, and tokenize — unlocking blockchain potential for everyone.",
+      link: "https://github.com/Rabeet8/ERC20Factory",
+      badges: ["Solidity", "Ethers.js", "React", "Web3"],
+      content: (
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(3)}>
+          <img
+            src={projectErc20Main}
+            alt="ERC20 Factory Token Creator"
             loading="eager"
             className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
           />
