@@ -99,6 +99,15 @@ export function ProjectsSection() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<ProjectImages | null>(null);
 
+  // Preload project images
+  React.useEffect(() => {
+    const images = [projectZerowl, projectSnapntrade, projectSnapntradeLogin];
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   const openModal = (projectIndex: number) => {
     if (projectImages[projectIndex]) {
       setSelectedProject(projectImages[projectIndex]);
@@ -112,11 +121,12 @@ export function ProjectsSection() {
       description:
         "A comprehensive cyber security news and blog platform delivering the latest insights on cyber attacks, data breaches, and vulnerability disclosures. Built with modern web technologies for fast content delivery and SEO optimization.",
       content: (
-        <div className="h-full w-full cursor-pointer" onClick={() => openModal(0)}>
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(0)}>
           <img
             src={projectZerowl}
             alt="Zerowl Cyber Security Blog"
-            className="h-full w-full object-cover object-left-top hover:scale-105 transition-transform duration-300"
+            loading="eager"
+            className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
           />
         </div>
       ),
@@ -126,11 +136,12 @@ export function ProjectsSection() {
       description:
         "A mobile-first marketplace application enabling users to buy and sell electronics, gadgets, and more. Features include category browsing, real-time chat, boosted listings, and a clean intuitive UI designed for seamless trading experiences.",
       content: (
-        <div className="h-full w-full cursor-pointer" onClick={() => openModal(1)}>
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(1)}>
           <img
             src={projectSnapntrade}
             alt="SnapNTrade Marketplace App"
-            className="h-full w-full object-cover object-top hover:scale-105 transition-transform duration-300"
+            loading="eager"
+            className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
           />
         </div>
       ),

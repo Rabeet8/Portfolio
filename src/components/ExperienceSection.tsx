@@ -5,6 +5,9 @@ const experienceData = [
     title: "2024",
     content: (
       <div>
+        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
+          Technyx System
+        </h3>
         <p className="text-foreground text-sm md:text-base font-normal mb-4">
           Led the frontend architecture for a SaaS platform serving 50K+ users. Built a design system from scratch with React, TypeScript, and Tailwind CSS that reduced development time by 40%.
         </p>
@@ -24,6 +27,9 @@ const experienceData = [
     title: "2023",
     content: (
       <div>
+        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
+          Freelance Developer
+        </h3>
         <p className="text-foreground text-sm md:text-base font-normal mb-4">
           Designed and developed responsive web applications for multiple clients across fintech, health-tech, and e-commerce. Focused on accessibility and performance optimization.
         </p>
@@ -43,6 +49,9 @@ const experienceData = [
     title: "2022",
     content: (
       <div>
+        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
+          Junior Developer & Designer
+        </h3>
         <p className="text-foreground text-sm md:text-base font-normal mb-4">
           Started freelancing as a UI/UX designer and frontend developer. Built portfolio projects and contributed to open-source design systems.
         </p>
