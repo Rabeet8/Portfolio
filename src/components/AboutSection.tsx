@@ -24,7 +24,7 @@ export function AboutSection() {
           <div className="h-px w-16 bg-muted-foreground/30" />
         </div>
 
-        <div className="flex items-center justify-center gap-8 md:gap-12">
+        <div className="flex items-center justify-center gap-12 md:gap-16 lg:gap-20">
           {/* Left pills */}
           <div className="hidden md:flex flex-col gap-5 items-end">
             {leftPills.map((pill, i) => (
@@ -55,9 +55,9 @@ export function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center max-w-3xl"
+            className="text-center max-w-4xl"
           >
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-relaxed md:leading-relaxed lg:leading-relaxed tracking-wide">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-wide">
               I help startups and enterprise to establish an emotional connection
               between their products and happy engaged customers
             </h2>
