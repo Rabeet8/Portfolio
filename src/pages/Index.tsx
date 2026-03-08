@@ -4,6 +4,7 @@ import RuixenBentoCards from "@/components/ui/ruixen-bento-cards";
 import { TimelineSection } from "@/components/TimelineSection";
 import { TechStackSection } from "@/components/TechStackSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
+import { ProjectsSection } from "@/components/ProjectsSection";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <TimelineSection />
       <TechStackSection />
       <ExperienceSection />
+      <ProjectsSection />
     </div>
   );
 };
