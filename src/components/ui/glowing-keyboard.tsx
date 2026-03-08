@@ -37,6 +37,7 @@ interface IconKeyboardKeyProps {
   className?: string;
   isSingleKey?: boolean;
   custom?: CustomKeyType;
+  widthMultiplier?: number;
   index?: number;
   rowIndex?: number;
   isHovered?: boolean;
@@ -142,16 +143,21 @@ const IconKeyboardKey = memo(
     text,
     className,
     isSingleKey,
+    widthMultiplier,
     index = 0,
     rowIndex = 0,
     isHovered,
     isLastRow,
-    keySize,
+    keySize = 54,
     transparentKey,
     glowColor,
     highlight,
   }: IconKeyboardKeyProps) => {
     const data = getKeyData(highlight, index, text, isHovered, rowIndex);
+    const gap = 4; // gap-1 = 4px
+    const keyWidth = widthMultiplier
+      ? keySize * widthMultiplier + gap * (widthMultiplier - 1)
+      : keySize;
 
     return (
       <motion.div
@@ -163,7 +169,7 @@ const IconKeyboardKey = memo(
           className
         )}
         style={{
-          width: keySize,
+          width: keyWidth,
           height: keySize,
           color: data.shouldGlow ? glowColor : undefined,
         }}
@@ -279,7 +285,7 @@ const ArrowKeys = memo(
           isSingleKey
           index={index}
           rowIndex={rowIndex}
-          className="!w-8 !h-4 !justify-center"
+          className="!w-10 !h-[25px] !justify-center"
           highlight={highlight}
         />
         <div className="flex gap-0.5">
@@ -289,28 +295,28 @@ const ArrowKeys = memo(
             isSingleKey
             index={index + 1}
             rowIndex={rowIndex}
-            className="!w-8 !h-4 !justify-center"
+            className="!w-10 !h-[25px] !justify-center"
+            highlight={highlight}
+          />
+          <IconKeyboardKey
+            icon={null}
+            text={<ArrowDownIcon size={10} />}
+            isSingleKey
+            index={index + 2}
+            rowIndex={rowIndex}
+            className="!w-10 !h-[25px] !justify-center"
             highlight={highlight}
           />
           <IconKeyboardKey
             icon={null}
             text={<ArrowRightIcon size={10} />}
             isSingleKey
-            index={index + 2}
+            index={index + 3}
             rowIndex={rowIndex}
-            className="!w-8 !h-4 !justify-center"
+            className="!w-10 !h-[25px] !justify-center"
             highlight={highlight}
           />
         </div>
-        <IconKeyboardKey
-          icon={null}
-          text={<ArrowDownIcon size={10} />}
-          isSingleKey
-          index={index + 3}
-          rowIndex={rowIndex}
-          className="!w-8 !h-4 !justify-center"
-          highlight={highlight}
-        />
       </div>
     );
   }
@@ -321,7 +327,7 @@ ArrowKeys.displayName = "ArrowKeys";
 export default GlowingKeyboard;
 
 const firstRowData: KeyRowDataProps[] = [
-  { icon: null, text: "esc", className: "!basis-full" },
+  { icon: null, text: "esc", widthMultiplier: 1.3 },
   { icon: <SunDimIcon size={iconSize} />, text: "F1" },
   { icon: <SunIcon size={iconSize} />, text: "F2" },
   { icon: <LayoutPanelLeft size={iconSize} />, text: "F3" },
@@ -338,7 +344,7 @@ const firstRowData: KeyRowDataProps[] = [
 ];
 
 const secondRowData: KeyRowDataProps[] = [
-  { icon: "~", text: "`", className: "first:!items-center" },
+  { icon: "~", text: "`" },
   { icon: "!", text: "1" },
   { icon: "@", text: "2" },
   { icon: "#", text: "3" },
@@ -351,11 +357,11 @@ const secondRowData: KeyRowDataProps[] = [
   { icon: ")", text: "0" },
   { icon: "_", text: "-" },
   { icon: "+", text: "=" },
-  { icon: null, text: "delete", className: "!basis-full" },
+  { icon: null, text: "delete", widthMultiplier: 1.6 },
 ];
 
 const thirdRowData: KeyRowDataProps[] = [
-  { icon: null, text: "tab", className: "!basis-full" },
+  { icon: null, text: "tab", widthMultiplier: 1.6 },
   { icon: "q", text: "Q", isSingleKey: true },
   { icon: "w", text: "W", isSingleKey: true },
   { icon: "e", text: "E", isSingleKey: true },
@@ -368,11 +374,11 @@ const thirdRowData: KeyRowDataProps[] = [
   { icon: "p", text: "P", isSingleKey: true },
   { icon: "{", text: "[" },
   { icon: "}", text: "]" },
-  { icon: "|", text: "/", className: "last:!items-center" },
+  { icon: "|", text: "/" },
 ];
 
 const fourthRowData: KeyRowDataProps[] = [
-  { icon: <DotIcon size={iconSize + 3} className="-ml-1.5 -mt-0.5" />, text: "caps lock", className: "!basis-full" },
+  { icon: <DotIcon size={iconSize + 3} className="-ml-1.5 -mt-0.5" />, text: "caps lock", widthMultiplier: 1.9 },
   { icon: "a", text: "A", isSingleKey: true },
   { icon: "s", text: "S", isSingleKey: true },
   { icon: "d", text: "D", isSingleKey: true },
@@ -384,11 +390,11 @@ const fourthRowData: KeyRowDataProps[] = [
   { icon: "l", text: "L", isSingleKey: true },
   { icon: ":", text: ";" },
   { icon: '"', text: "'" },
-  { icon: null, text: "return", className: "!basis-full" },
+  { icon: null, text: "return", widthMultiplier: 1.9 },
 ];
 
 const fifthRowData: KeyRowDataProps[] = [
-  { icon: null, text: "shift", className: "!basis-full" },
+  { icon: null, text: "shift", widthMultiplier: 2.4 },
   { icon: "z", text: "Z", isSingleKey: true },
   { icon: "x", text: "X", isSingleKey: true },
   { icon: "c", text: "C", isSingleKey: true },
@@ -399,16 +405,16 @@ const fifthRowData: KeyRowDataProps[] = [
   { icon: "<", text: "," },
   { icon: ">", text: "." },
   { icon: "?", text: "/" },
-  { icon: null, text: "shift", className: "!basis-full" },
+  { icon: null, text: "shift", widthMultiplier: 2.4 },
 ];
 
 const sixthRowData: KeyRowDataProps[] = [
   { icon: "fn", text: <GlobeIcon size={iconSize} /> },
   { icon: <ChevronUpIcon size={iconSize} />, text: "control", className: "!items-end" },
   { icon: <OptionIcon size={iconSize} />, text: "option", className: "!items-end" },
-  { icon: <CommandIcon size={iconSize} />, text: "command", className: "!items-end !basis-20" },
-  { icon: null, text: "", className: "!basis-80" },
-  { icon: <CommandIcon size={iconSize} />, text: "command", className: "!items-start !basis-20" },
+  { icon: <CommandIcon size={iconSize} />, text: "command", className: "!items-end", widthMultiplier: 1.5 },
+  { icon: null, text: "", widthMultiplier: 5.5 },
+  { icon: <CommandIcon size={iconSize} />, text: "command", className: "!items-start", widthMultiplier: 1.5 },
   { icon: <OptionIcon size={iconSize} />, text: "option", className: "!items-start" },
   { icon: null, custom: "ArrowKeys" },
 ];
