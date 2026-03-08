@@ -116,7 +116,14 @@ const FloatingIconsHero = React.forwardRef<
         ))}
       </div>
 
-      {/* Center content removed — heading is now external */}
+      <div className="relative z-10 flex flex-col items-center gap-4 px-6 text-center">
+        <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+          Tech Stack I Use
+        </h2>
+        <p className="max-w-xl text-muted-foreground">
+          Technologies and tools I work with to build modern, scalable applications.
+        </p>
+      </div>
     </div>
   );
 });
