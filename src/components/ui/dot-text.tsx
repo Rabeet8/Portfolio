@@ -49,7 +49,7 @@ export function DotText({ text, className }: DotTextProps) {
     const imageData = offCtx.getImageData(0, 0, rect.width, rect.height);
     const pixels = imageData.data;
 
-    const gap = Math.max(3, Math.floor(fontSize / 28));
+    const gap = Math.max(2, Math.floor(fontSize / 40));
     const particles: typeof particlesRef.current = [];
 
     for (let y = 0; y < rect.height; y += gap) {
@@ -61,8 +61,8 @@ export function DotText({ text, className }: DotTextProps) {
             y,
             baseX: x,
             baseY: y,
-            size: Math.random() * 1.5 + 0.5,
-            alpha: Math.random() * 0.4 + 0.15,
+            size: Math.random() * 2 + 1,
+            alpha: Math.random() * 0.3 + 0.55,
             speed: Math.random() * 0.02 + 0.005,
             offset: Math.random() * Math.PI * 2,
           });
