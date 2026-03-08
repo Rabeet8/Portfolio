@@ -1,5 +1,5 @@
 import { FloatingIconsHero, type FloatingIconsHeroProps } from "@/components/ui/floating-icons-hero-section";
-import React from "react";
+import * as React from "react";
 
 // --- Tech Stack SVG Icons ---
 
