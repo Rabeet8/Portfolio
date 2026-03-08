@@ -164,6 +164,21 @@ export function ProjectsSection() {
       ),
     },
     {
+      title: "PromptKit - AI Utility App",
+      description:
+        "PromptKit is a powerful all-in-one AI utility app that helps you analyze prompts, generate JSON schemas, estimate token costs, and work faster with LLMs. Everything you need for building with AI.",
+      content: (
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(2)}>
+          <img
+            src={projectPromptKitHome}
+            alt="PromptKit AI Utility App"
+            loading="eager"
+            className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      ),
+    },
+    {
       title: "More Projects Coming Soon",
       description:
         "I'm constantly building and experimenting with new technologies. Stay tuned for more exciting projects spanning Web3, AI integrations, and full-stack applications.",
