@@ -5,17 +5,12 @@ const highlight = [
   {
     startRow: 2,
     startIndex: 1,
-    text: ["", "E", "", "", "", "", "", "I", "", "", ""],
-  },
-  {
-    startRow: 3,
-    startIndex: 1,
-    text: ["", "S", "D", "", "", "H", "", "", "L", "", ""],
+    text: ["F", "O", "L", "L", "O", "W", "", "M", "E", ""],
   },
   {
     startRow: 4,
-    startIndex: 1,
-    text: ["", "", "C", "", "B", "", "", "", "", "", ""],
+    startIndex: 2,
+    text: ["L", "E", "G", "I", "O", "N"],
   },
 ];
 
@@ -35,7 +30,6 @@ export function KeyboardSection() {
           highlight={highlight}
           glowColor="#f43f5d"
           transparentKey
-          isAlwaysActive
         />
       </div>
     </section>
