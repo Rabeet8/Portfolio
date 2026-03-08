@@ -37,6 +37,7 @@ interface IconKeyboardKeyProps {
   className?: string;
   isSingleKey?: boolean;
   custom?: CustomKeyType;
+  widthMultiplier?: number;
   index?: number;
   rowIndex?: number;
   isHovered?: boolean;
