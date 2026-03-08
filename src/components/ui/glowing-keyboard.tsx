@@ -285,7 +285,7 @@ const ArrowKeys = memo(
           isSingleKey
           index={index}
           rowIndex={rowIndex}
-          className="!w-8 !h-4 !justify-center"
+          className="!w-10 !h-[25px] !justify-center"
           highlight={highlight}
         />
         <div className="flex gap-0.5">
@@ -295,28 +295,28 @@ const ArrowKeys = memo(
             isSingleKey
             index={index + 1}
             rowIndex={rowIndex}
-            className="!w-8 !h-4 !justify-center"
+            className="!w-10 !h-[25px] !justify-center"
+            highlight={highlight}
+          />
+          <IconKeyboardKey
+            icon={null}
+            text={<ArrowDownIcon size={10} />}
+            isSingleKey
+            index={index + 2}
+            rowIndex={rowIndex}
+            className="!w-10 !h-[25px] !justify-center"
             highlight={highlight}
           />
           <IconKeyboardKey
             icon={null}
             text={<ArrowRightIcon size={10} />}
             isSingleKey
-            index={index + 2}
+            index={index + 3}
             rowIndex={rowIndex}
-            className="!w-8 !h-4 !justify-center"
+            className="!w-10 !h-[25px] !justify-center"
             highlight={highlight}
           />
         </div>
-        <IconKeyboardKey
-          icon={null}
-          text={<ArrowDownIcon size={10} />}
-          isSingleKey
-          index={index + 3}
-          rowIndex={rowIndex}
-          className="!w-8 !h-4 !justify-center"
-          highlight={highlight}
-        />
       </div>
     );
   }
