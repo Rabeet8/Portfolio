@@ -68,13 +68,16 @@ export function FooterSection() {
             className="flex flex-wrap gap-6"
           >
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.label}
-                href={link.href}
+                onClick={() => {
+                  const el = document.getElementById(link.id);
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </motion.nav>
 
