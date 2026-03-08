@@ -63,20 +63,22 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10 no-scrollbar"
+      className="h-[36rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10 no-scrollbar scroll-smooth"
       ref={ref}
       style={{
         scrollbarWidth: "none",
         msOverflowStyle: "none",
+        scrollBehavior: "smooth",
       }}
     >
       <div className="div relative flex items-start px-4">
         <div className="max-w-2xl">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-20">
+            <div key={item.title + index} className="my-28">
               <motion.h2
                 initial={{ opacity: 0 }}
                 animate={{ opacity: activeCard === index ? 1 : 0.3 }}
+                transition={{ duration: 0.4 }}
                 className="text-2xl font-bold text-foreground"
               >
                 {item.title}
@@ -84,6 +86,7 @@ export const StickyScroll = ({
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: activeCard === index ? 1 : 0.3 }}
+                transition={{ duration: 0.4 }}
                 className="text-base text-muted-foreground max-w-sm mt-10"
               >
                 {item.description}
@@ -94,13 +97,21 @@ export const StickyScroll = ({
         </div>
       </div>
       <div
-        style={{ background: backgroundGradient }}
         className={cn(
-          "hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",
+          "hidden lg:block h-60 w-80 rounded-md sticky top-10 overflow-hidden",
           contentClassName
         )}
       >
-        {content[activeCard].content ?? null}
+        <motion.div
+          key={activeCard}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          style={{ background: backgroundGradient }}
+          className="h-full w-full"
+        >
+          {content[activeCard].content ?? null}
+        </motion.div>
       </div>
     </motion.div>
   );

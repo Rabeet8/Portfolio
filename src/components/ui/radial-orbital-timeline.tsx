@@ -139,6 +139,17 @@ export default function RadialOrbitalTimeline({
     return relatedItems.includes(itemId);
   };
 
+  const getStatusColor = (status: TimelineItem["status"], index: number): string => {
+    const colors = [
+      "hsl(25, 95%, 55%)",   // orange
+      "hsl(160, 60%, 45%)",  // teal
+      "hsl(210, 100%, 55%)", // blue
+      "hsl(310, 80%, 60%)",  // pink
+      "hsl(45, 90%, 55%)",   // yellow
+    ];
+    return colors[index % colors.length];
+  };
+
   const getStatusStyles = (status: TimelineItem["status"]): string => {
     switch (status) {
       case "completed":
@@ -205,11 +216,17 @@ export default function RadialOrbitalTimeline({
                 <div
                   className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${
                     isExpanded
-                      ? "scale-125 border-foreground bg-foreground text-background"
+                      ? "scale-125 border-foreground text-primary-foreground"
                       : isRelated
-                      ? "scale-110 border-foreground/60 bg-secondary text-foreground"
-                      : "border-border bg-card text-foreground hover:border-foreground/40"
+                      ? "scale-110 border-foreground/60 text-primary-foreground"
+                      : "border-border text-primary-foreground hover:border-foreground/40"
                   }`}
+                  style={{
+                    backgroundColor: getStatusColor(item.status, index),
+                    boxShadow: isExpanded
+                      ? `0 0 20px ${getStatusColor(item.status, index)}80`
+                      : `0 0 10px ${getStatusColor(item.status, index)}40`,
+                  }}
                 >
                   <Icon className="w-5 h-5" />
                 </div>

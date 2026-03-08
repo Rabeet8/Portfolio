@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
@@ -42,7 +43,7 @@ function ProjectImageModal({
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl w-[95vw] p-0 bg-background border-border overflow-hidden [&>button]:hidden">
+      <DialogContent className="max-w-4xl w-[95vw] p-0 bg-background border-border overflow-hidden [&>button]:hidden data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:duration-300 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:duration-200">
         <div className="flex items-center justify-between px-4 py-3 border-b border-border">
           <h3 className="text-sm font-semibold text-foreground">{project.title}</h3>
           <button onClick={onClose} className="text-muted-foreground hover:text-foreground transition-colors">
@@ -61,10 +62,14 @@ function ProjectImageModal({
           )}
 
           <div className="flex items-center justify-center w-full px-12 py-4">
-            <img
+            <motion.img
+              key={currentIndex}
               src={project.images[currentIndex]}
               alt={`${project.title} screenshot ${currentIndex + 1}`}
               className="max-h-[65vh] w-auto object-contain rounded-md"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             />
           </div>
 

@@ -55,9 +55,9 @@ export function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center max-w-2xl"
+            className="text-center max-w-3xl"
           >
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-relaxed md:leading-relaxed lg:leading-relaxed tracking-wide">
               I help startups and enterprise to establish an emotional connection
               between their products and happy engaged customers
             </h2>
