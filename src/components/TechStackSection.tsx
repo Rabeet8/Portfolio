@@ -242,6 +242,11 @@ const techIcons: FloatingIconsHeroProps['icons'] = [
 export function TechStackSection() {
   return (
     <section className="bg-background">
+      <div className="max-w-5xl mx-auto px-6 text-center pt-16 pb-4">
+        <p className="text-sm text-muted-foreground uppercase tracking-widest mb-2">
+          Tools & Technologies
+        </p>
+      </div>
       <FloatingIconsHero icons={techIcons} />
     </section>
   );

@@ -148,7 +148,7 @@ export function ProjectsSection() {
   ];
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16" style={{ backgroundColor: 'hsl(0 0% 0%)' }}>
       <div className="max-w-5xl mx-auto px-6 text-center mb-10">
         <p className="text-sm text-muted-foreground uppercase tracking-widest mb-2">
           Portfolio
