@@ -243,9 +243,9 @@ export function TechStackSection() {
   return (
     <section className="py-10 bg-background">
       <div className="max-w-5xl mx-auto px-6 text-center mb-6">
-        <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">
+        <h2 className="text-3xl md:text-5xl font-bold text-foreground">
           Tools & Technologies
-        </p>
+        </h2>
       </div>
       <FloatingIconsHero icons={techIcons} />
     </section>
