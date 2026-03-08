@@ -3,17 +3,17 @@ import { Github, Linkedin, Twitter, Mail, ArrowUpRight } from "lucide-react";
 import { DotText } from "@/components/ui/dot-text";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+  { icon: Github, href: "https://github.com/Rabeet8", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/syedrabeet/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/CuriousRabeet", label: "Twitter" },
+  { icon: Mail, href: "mailto:syedrabeet2002@gmail.com", label: "Email" },
 ];
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Tech Stack", href: "#tech-stack" },
+  { label: "About", id: "about" },
+  { label: "Experience", id: "experience" },
+  { label: "Projects", id: "projects" },
+  { label: "Tech Stack", id: "tech-stack" },
 ];
 
 export function FooterSection() {
