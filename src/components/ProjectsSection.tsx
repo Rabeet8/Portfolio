@@ -117,6 +117,14 @@ export function ProjectsSection() {
     });
   }, []);
 
+  const preloadPromptKit = [projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken];
+  React.useEffect(() => {
+    preloadPromptKit.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   const openModal = (projectIndex: number) => {
     if (projectImages[projectIndex]) {
       setSelectedProject(projectImages[projectIndex]);
