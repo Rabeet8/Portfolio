@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Mail, ArrowUpRight } from "lucide-react";
+import { DotText } from "@/components/ui/dot-text";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com", label: "GitHub" },
