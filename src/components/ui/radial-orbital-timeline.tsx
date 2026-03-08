@@ -245,22 +245,7 @@ export default function RadialOrbitalTimeline({
                   <div className="absolute top-20 left-1/2 -translate-x-1/2 w-72">
                     <Card className="border-border/30 bg-card/95 backdrop-blur-lg">
                       <CardHeader className="pb-2">
-                        <div className="flex items-center justify-between">
-                          <Badge
-                            variant="outline"
-                            className={getStatusStyles(item.status)}
-                          >
-                            {item.status === "completed"
-                              ? "COMPLETE"
-                              : item.status === "in-progress"
-                              ? "IN PROGRESS"
-                              : "PENDING"}
-                          </Badge>
-                          <span className="text-xs text-muted-foreground">
-                            {item.date}
-                          </span>
-                        </div>
-                        <CardTitle className="text-base mt-2">
+                        <CardTitle className="text-base">
                           {item.title}
                         </CardTitle>
                       </CardHeader>
@@ -275,13 +260,13 @@ export default function RadialOrbitalTimeline({
                             Energy Level
                           </div>
                           <span className="text-xs font-medium text-foreground">
-                            {item.energy}%
+                            100%
                           </span>
                         </div>
                         <div className="w-full h-1.5 rounded-full bg-secondary overflow-hidden">
                           <div
                             className="h-full rounded-full bg-foreground transition-all duration-1000"
-                            style={{ width: `${item.energy}%` }}
+                            style={{ width: `100%` }}
                           />
                         </div>
 
