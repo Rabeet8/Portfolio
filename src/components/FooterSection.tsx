@@ -3,17 +3,17 @@ import { Github, Linkedin, Twitter, Mail, ArrowUpRight } from "lucide-react";
 import { DotText } from "@/components/ui/dot-text";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+  { icon: Github, href: "https://github.com/Rabeet8", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/syedrabeet/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/CuriousRabeet", label: "Twitter" },
+  { icon: Mail, href: "mailto:syedrabeet2002@gmail.com", label: "Email" },
 ];
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Tech Stack", href: "#tech-stack" },
+  { label: "About", id: "about" },
+  { label: "Experience", id: "experience" },
+  { label: "Projects", id: "projects" },
+  { label: "Tech Stack", id: "tech-stack" },
 ];
 
 export function FooterSection() {
@@ -42,7 +42,7 @@ export function FooterSection() {
 
           {/* CTA Button */}
           <motion.a
-            href="mailto:hello@example.com"
+            href="mailto:syedrabeet2002@gmail.com"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -68,13 +68,16 @@ export function FooterSection() {
             className="flex flex-wrap gap-6"
           >
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.label}
-                href={link.href}
+                onClick={() => {
+                  const el = document.getElementById(link.id);
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </motion.nav>
 
