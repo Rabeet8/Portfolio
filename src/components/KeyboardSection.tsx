@@ -30,6 +30,7 @@ export function KeyboardSection() {
           highlight={highlight}
           glowColor="#f43f5d"
           transparentKey
+          keySize={54}
         />
       </div>
     </section>
