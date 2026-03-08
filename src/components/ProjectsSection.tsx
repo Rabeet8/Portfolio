@@ -12,6 +12,8 @@ import projectPromptKitLogin from "@/assets/project-promptkit-login.jpg";
 import projectPromptKitProfile from "@/assets/project-promptkit-profile.jpg";
 import projectPromptKitCost from "@/assets/project-promptkit-cost.jpg";
 import projectPromptKitToken from "@/assets/project-promptkit-token.jpg";
+import projectThriveMain from "@/assets/project-thrive-main.png";
+import projectErc20Main from "@/assets/project-erc20-main.png";
 
 interface ProjectImages {
   title: string;
