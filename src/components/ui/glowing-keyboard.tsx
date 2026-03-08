@@ -162,10 +162,10 @@ const IconKeyboardKey = memo(
     return (
       <motion.div
         className={cn(
-          "flex flex-col items-center justify-between rounded-md border border-border/50 px-1.5 py-1 text-muted-foreground select-none",
+          "flex flex-col rounded-md border border-border/50 px-1.5 py-1 text-muted-foreground select-none cursor-pointer active:scale-95 transition-transform",
           transparentKey ? "bg-transparent" : "bg-secondary/30",
           data.shouldGlow && "glowing-key",
-          isLastRow && "!items-center !justify-center",
+          data.shouldGlow ? "items-center justify-center" : (isLastRow ? "items-center justify-center" : "items-center justify-between"),
           className
         )}
         style={{
@@ -175,21 +175,29 @@ const IconKeyboardKey = memo(
         }}
         animate={data.shouldGlow ? { scale: [1, 1.05, 1] } : {}}
         transition={{ duration: 0.3 }}
+        whileTap={{ scale: 0.9 }}
       >
-        {!isSingleKey && (
-          <span className="text-[8px] leading-none self-start opacity-70">
-            {icon}
+        {data.shouldGlow ? (
+          <span className="text-sm font-bold blur-in">
+            {data.text}
           </span>
+        ) : (
+          <>
+            {!isSingleKey && (
+              <span className="text-[8px] leading-none self-start opacity-70">
+                {icon}
+              </span>
+            )}
+            <span
+              className={cn(
+                "text-[10px] leading-none",
+                isSingleKey && "text-xs",
+              )}
+            >
+              {data.text}
+            </span>
+          </>
         )}
-        <span
-          className={cn(
-            "text-[10px] leading-none",
-            isSingleKey && "text-xs",
-            data.shouldGlow && "blur-in font-bold"
-          )}
-        >
-          {data.text}
-        </span>
       </motion.div>
     );
   }
