@@ -68,7 +68,6 @@ export function DotText({ text, className }: DotTextProps) {
             alpha: Math.random() * 0.3 + 0.4,
           });
         }
-        }
       }
     }
 
