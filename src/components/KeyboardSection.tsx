@@ -5,12 +5,17 @@ const highlight = [
   {
     startRow: 2,
     startIndex: 1,
-    text: ["F", "O", "L", "L", "O", "W", "", "M", "E", ""],
+    text: ["F", "O", "L", "L", "O", "W"],
+  },
+  {
+    startRow: 3,
+    startIndex: 4,
+    text: ["S", "Y", "E", "D"],
   },
   {
     startRow: 4,
-    startIndex: 2,
-    text: ["L", "E", "G", "I", "O", "N"],
+    startIndex: 6,
+    text: ["R", "A", "B", "E", "E", "T"],
   },
 ];
 
