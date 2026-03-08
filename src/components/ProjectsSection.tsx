@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X, ExternalLink } from "lucide-react";
-import projectSnapntradeMain from "@/assets/project-snapntrade-main.jpg";
+import projectSnapntradeMain from "@/assets/project-snapntrade-main.png";
 import projectSnapntrade from "@/assets/project-snapntrade.png";
 import projectSnapntradeLogin from "@/assets/project-snapntrade-login.png";
-import projectPromptKitMain from "@/assets/project-promptkit-main.jpg";
+import projectPromptKitMain from "@/assets/project-promptkit-main.png";
 import projectPromptKitHome from "@/assets/project-promptkit-home.jpg";
 import projectPromptKitLogin from "@/assets/project-promptkit-login.jpg";
 import projectPromptKitProfile from "@/assets/project-promptkit-profile.jpg";
@@ -126,6 +126,7 @@ export function ProjectsSection() {
       description:
         "A mobile-first marketplace application enabling users to buy and sell electronics, gadgets, and more. Features include category browsing, real-time chat, boosted listings, and a clean intuitive UI designed for seamless trading experiences.",
       link: "https://play.google.com/store/apps/details?id=com.snapNtrade",
+      badges: ["React Native", "Firebase", "Node.js", "Express"],
       content: (
         <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(0)}>
           <img
@@ -142,6 +143,7 @@ export function ProjectsSection() {
       description:
         "PromptKit is a powerful all-in-one AI utility app that helps you analyze prompts, generate JSON schemas, estimate token costs, and work faster with LLMs. Everything you need for building with AI.",
       link: "https://promptkit-landing-page.vercel.app/",
+      badges: ["Flutter", "Dart", "OpenAI API", "Firebase"],
       content: (
         <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(1)}>
           <img
