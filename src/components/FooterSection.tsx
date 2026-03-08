@@ -114,7 +114,7 @@ export function FooterSection() {
       </div>
 
       {/* Dot text banner */}
-      <div className="w-full h-32 md:h-48 lg:h-64 overflow-hidden opacity-60">
+      <div className="w-full h-40 md:h-56 lg:h-72 overflow-hidden">
         <DotText text="Syed Rabeet" />
       </div>
     </footer>
