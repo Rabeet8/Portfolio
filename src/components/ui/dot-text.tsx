@@ -128,9 +128,13 @@ export function DotText({ text, className }: DotTextProps) {
         p.x += (p.originX - p.x) * returnSpeed;
         p.y += (p.originY - p.y) * returnSpeed;
 
+        // Flicker effect
+        const flicker = p.alpha + (Math.random() - 0.5) * 0.15;
+        const clampedAlpha = Math.max(0.2, Math.min(0.7, flicker));
+
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${clampedAlpha})`;
         ctx.fill();
       }
 
