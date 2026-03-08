@@ -29,8 +29,11 @@ export function DotText({ text, className }: DotTextProps) {
 
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
+    const w = Math.floor(rect.width);
+    const h = Math.floor(rect.height);
+    if (w === 0 || h === 0) return;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
     ctx.scale(dpr, dpr);
 
     const offscreen = document.createElement("canvas");
