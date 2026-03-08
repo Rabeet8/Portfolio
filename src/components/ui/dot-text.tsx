@@ -62,7 +62,7 @@ export function DotText({ text, className }: DotTextProps) {
             baseX: x,
             baseY: y,
             size: Math.random() * 2 + 1,
-            alpha: Math.random() * 0.3 + 0.55,
+            alpha: Math.random() * 0.2 + 0.4,
             speed: Math.random() * 0.02 + 0.005,
             offset: Math.random() * Math.PI * 2,
           });
