@@ -112,6 +112,11 @@ export function FooterSection() {
           © {currentYear} All rights reserved.
         </motion.p>
       </div>
+
+      {/* Dot text banner */}
+      <div className="w-full h-32 md:h-48 lg:h-64 overflow-hidden opacity-60">
+        <DotText text="Syed Rabeet" />
+      </div>
     </footer>
   );
 }
