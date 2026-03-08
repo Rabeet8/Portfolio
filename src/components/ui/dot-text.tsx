@@ -29,32 +29,35 @@ export function DotText({ text, className }: DotTextProps) {
 
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
+    const w = Math.floor(rect.width);
+    const h = Math.floor(rect.height);
+    if (w === 0 || h === 0) return;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
     ctx.scale(dpr, dpr);
 
     const offscreen = document.createElement("canvas");
-    offscreen.width = rect.width;
-    offscreen.height = rect.height;
+    offscreen.width = w;
+    offscreen.height = h;
     const offCtx = offscreen.getContext("2d");
     if (!offCtx) return;
 
-    const fontSize = Math.min(rect.width / (text.length * 0.52), rect.height * 0.65);
+    const fontSize = Math.min(w / (text.length * 0.52), h * 0.65);
     offCtx.fillStyle = "#ffffff";
     offCtx.font = `900 ${fontSize}px 'Poppins', sans-serif`;
     offCtx.textAlign = "center";
     offCtx.textBaseline = "middle";
-    offCtx.fillText(text, rect.width / 2, rect.height / 2);
+    offCtx.fillText(text, w / 2, h / 2);
 
-    const imageData = offCtx.getImageData(0, 0, rect.width, rect.height);
+    const imageData = offCtx.getImageData(0, 0, w, h);
     const pixels = imageData.data;
 
     const gap = Math.max(2, Math.floor(fontSize / 30));
     const particles: Particle[] = [];
 
-    for (let y = 0; y < rect.height; y += gap) {
-      for (let x = 0; x < rect.width; x += gap) {
-        const i = (y * rect.width + x) * 4;
+    for (let y = 0; y < h; y += gap) {
+      for (let x = 0; x < w; x += gap) {
+        const i = (y * w + x) * 4;
         if (pixels[i + 3] > 50) {
           particles.push({
             originX: x,
@@ -139,9 +142,13 @@ export function DotText({ text, className }: DotTextProps) {
     const handleResize = () => initParticles();
     window.addEventListener("resize", handleResize);
 
+    const resizeObserver = new ResizeObserver(() => initParticles());
+    resizeObserver.observe(canvas);
+
     return () => {
       cancelAnimationFrame(animFrameRef.current);
       window.removeEventListener("resize", handleResize);
+      resizeObserver.disconnect();
       canvas.removeEventListener("mousemove", handleMouseMove);
       canvas.removeEventListener("mouseleave", handleMouseLeave);
       canvas.removeEventListener("touchmove", handleTouchMove);
