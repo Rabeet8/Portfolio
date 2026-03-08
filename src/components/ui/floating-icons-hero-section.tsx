@@ -116,14 +116,7 @@ const FloatingIconsHero = React.forwardRef<
         ))}
       </div>
 
-      <div className="relative z-10 flex flex-col items-center gap-4 px-6 text-center">
-        <h2 className="text-4xl font-bold text-foreground md:text-6xl">
-          Tech Stack I Use
-        </h2>
-        <p className="max-w-xl text-muted-foreground">
-          Technologies and tools I work with to build modern, scalable applications.
-        </p>
-      </div>
+      <div className="relative z-10" />
     </div>
   );
 });
