@@ -12,6 +12,7 @@ export const StickyScroll = ({
     title: string;
     description: string;
     link?: string;
+    badges?: string[];
     content?: React.ReactNode | any;
   }[];
   contentClassName?: string;
@@ -92,6 +93,23 @@ export const StickyScroll = ({
               >
                 {item.description}
               </motion.p>
+              {item.badges && item.badges.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: activeCard === index ? 1 : 0.3 }}
+                  transition={{ duration: 0.4 }}
+                  className="flex flex-wrap gap-2 mt-4"
+                >
+                  {item.badges.map((badge) => (
+                    <span
+                      key={badge}
+                      className="px-3 py-1 text-xs font-medium rounded-full border border-border bg-accent/50 text-foreground"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                </motion.div>
+              )}
               {item.link && (
                 <motion.a
                   href={item.link}
