@@ -6,6 +6,11 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import projectZerowl from "@/assets/project-zerowl.png";
 import projectSnapntrade from "@/assets/project-snapntrade.png";
 import projectSnapntradeLogin from "@/assets/project-snapntrade-login.png";
+import projectPromptKitHome from "@/assets/project-promptkit-home.jpg";
+import projectPromptKitLogin from "@/assets/project-promptkit-login.jpg";
+import projectPromptKitProfile from "@/assets/project-promptkit-profile.jpg";
+import projectPromptKitCost from "@/assets/project-promptkit-cost.jpg";
+import projectPromptKitToken from "@/assets/project-promptkit-token.jpg";
 
 interface ProjectImages {
   title: string;
@@ -20,6 +25,10 @@ const projectImages: ProjectImages[] = [
   {
     title: "SnapNTrade - Marketplace App",
     images: [projectSnapntrade, projectSnapntradeLogin],
+  },
+  {
+    title: "PromptKit - AI Utility App",
+    images: [projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken],
   },
 ];
 
