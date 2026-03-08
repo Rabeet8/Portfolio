@@ -99,6 +99,15 @@ export function ProjectsSection() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<ProjectImages | null>(null);
 
+  // Preload project images
+  React.useEffect(() => {
+    const images = [projectZerowl, projectSnapntrade, projectSnapntradeLogin];
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   const openModal = (projectIndex: number) => {
     if (projectImages[projectIndex]) {
       setSelectedProject(projectImages[projectIndex]);
