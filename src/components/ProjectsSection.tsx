@@ -6,6 +6,11 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import projectZerowl from "@/assets/project-zerowl.png";
 import projectSnapntrade from "@/assets/project-snapntrade.png";
 import projectSnapntradeLogin from "@/assets/project-snapntrade-login.png";
+import projectPromptKitHome from "@/assets/project-promptkit-home.jpg";
+import projectPromptKitLogin from "@/assets/project-promptkit-login.jpg";
+import projectPromptKitProfile from "@/assets/project-promptkit-profile.jpg";
+import projectPromptKitCost from "@/assets/project-promptkit-cost.jpg";
+import projectPromptKitToken from "@/assets/project-promptkit-token.jpg";
 
 interface ProjectImages {
   title: string;
@@ -20,6 +25,10 @@ const projectImages: ProjectImages[] = [
   {
     title: "SnapNTrade - Marketplace App",
     images: [projectSnapntrade, projectSnapntradeLogin],
+  },
+  {
+    title: "PromptKit - AI Utility App",
+    images: [projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken],
   },
 ];
 
@@ -108,6 +117,14 @@ export function ProjectsSection() {
     });
   }, []);
 
+  const preloadPromptKit = [projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken];
+  React.useEffect(() => {
+    preloadPromptKit.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   const openModal = (projectIndex: number) => {
     if (projectImages[projectIndex]) {
       setSelectedProject(projectImages[projectIndex]);
@@ -140,6 +157,21 @@ export function ProjectsSection() {
           <img
             src={projectSnapntrade}
             alt="SnapNTrade Marketplace App"
+            loading="eager"
+            className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "PromptKit - AI Utility App",
+      description:
+        "PromptKit is a powerful all-in-one AI utility app that helps you analyze prompts, generate JSON schemas, estimate token costs, and work faster with LLMs. Everything you need for building with AI.",
+      content: (
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(2)}>
+          <img
+            src={projectPromptKitHome}
+            alt="PromptKit AI Utility App"
             loading="eager"
             className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
           />
