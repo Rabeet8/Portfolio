@@ -142,9 +142,13 @@ export function DotText({ text, className }: DotTextProps) {
     const handleResize = () => initParticles();
     window.addEventListener("resize", handleResize);
 
+    const resizeObserver = new ResizeObserver(() => initParticles());
+    resizeObserver.observe(canvas);
+
     return () => {
       cancelAnimationFrame(animFrameRef.current);
       window.removeEventListener("resize", handleResize);
+      resizeObserver.disconnect();
       canvas.removeEventListener("mousemove", handleMouseMove);
       canvas.removeEventListener("mouseleave", handleMouseLeave);
       canvas.removeEventListener("touchmove", handleTouchMove);
