@@ -57,7 +57,7 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="text-center max-w-4xl"
           >
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-wide">
+            <h2 className="text-[28px] md:text-[46px] lg:text-[58px] font-bold text-foreground leading-[1.25] md:leading-[1.25] lg:leading-[1.25] tracking-wide">
               I help startups and enterprise to establish an emotional connection
               between their products and happy engaged customers
             </h2>
