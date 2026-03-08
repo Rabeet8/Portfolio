@@ -88,9 +88,6 @@ export function DotText({ text, className }: DotTextProps) {
       const rect = canvas.getBoundingClientRect();
       ctx.clearRect(0, 0, rect.width, rect.height);
 
-      const rootStyle = getComputedStyle(document.documentElement);
-      const fg = rootStyle.getPropertyValue("--foreground").trim();
-      
       for (const p of particlesRef.current) {
         time += 0.00001;
         const flicker = Math.sin(time * 1000 + p.offset) * 0.5 + 0.5;
@@ -98,7 +95,7 @@ export function DotText({ text, className }: DotTextProps) {
         
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${fg}, ${currentAlpha})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${currentAlpha})`;
         ctx.fill();
       }
 
