@@ -16,7 +16,7 @@ const rightPills = [
 export function AboutSection() {
   return (
     <section className="py-24 md:py-32 bg-background overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="w-full px-6">
         {/* Hello divider */}
         <div className="flex items-center justify-center gap-4 mb-16">
           <div className="h-px w-16 bg-muted-foreground/30" />
@@ -24,7 +24,7 @@ export function AboutSection() {
           <div className="h-px w-16 bg-muted-foreground/30" />
         </div>
 
-        <div className="flex items-center justify-center gap-12 md:gap-16 lg:gap-20">
+        <div className="flex items-center justify-between w-full">
           {/* Left pills */}
           <div className="hidden md:flex flex-col gap-5 items-end">
             {leftPills.map((pill, i) => (
