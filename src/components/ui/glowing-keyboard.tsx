@@ -143,16 +143,21 @@ const IconKeyboardKey = memo(
     text,
     className,
     isSingleKey,
+    widthMultiplier,
     index = 0,
     rowIndex = 0,
     isHovered,
     isLastRow,
-    keySize,
+    keySize = 54,
     transparentKey,
     glowColor,
     highlight,
   }: IconKeyboardKeyProps) => {
     const data = getKeyData(highlight, index, text, isHovered, rowIndex);
+    const gap = 4; // gap-1 = 4px
+    const keyWidth = widthMultiplier
+      ? keySize * widthMultiplier + gap * (widthMultiplier - 1)
+      : keySize;
 
     return (
       <motion.div
@@ -164,7 +169,7 @@ const IconKeyboardKey = memo(
           className
         )}
         style={{
-          width: keySize,
+          width: keyWidth,
           height: keySize,
           color: data.shouldGlow ? glowColor : undefined,
         }}
