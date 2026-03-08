@@ -29,6 +29,14 @@ const projectImages: ProjectImages[] = [
     title: "PromptKit - AI Utility App",
     images: [projectPromptKitMain, projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken],
   },
+  {
+    title: "Thrive - Plant Care App",
+    images: [projectThriveMain],
+  },
+  {
+    title: "ERC20 Factory - Token Creator",
+    images: [projectErc20Main],
+  },
 ];
 
 function ProjectImageModal({
