@@ -5,6 +5,7 @@ import { TimelineSection } from "@/components/TimelineSection";
 import { TechStackSection } from "@/components/TechStackSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
+import { KeyboardSection } from "@/components/KeyboardSection";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <TechStackSection />
       <ExperienceSection />
       <ProjectsSection />
+      <KeyboardSection />
     </div>
   );
 };
