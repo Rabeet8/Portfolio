@@ -116,11 +116,7 @@ export function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<ProjectImages | null>(null);
 
   React.useEffect(() => {
-    const images = [projectSnapntradeMain, projectSnapntrade, projectSnapntradeLogin, projectPromptKitMain, projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken];
-    images.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
+    const images = [projectSnapntradeMain, projectSnapntrade, projectSnapntradeLogin, projectPromptKitMain, projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken, projectThriveMain, projectErc20Main];
   }, []);
 
   const openModal = (projectIndex: number) => {
