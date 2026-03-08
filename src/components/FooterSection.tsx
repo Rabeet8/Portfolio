@@ -42,7 +42,7 @@ export function FooterSection() {
 
           {/* CTA Button */}
           <motion.a
-            href="mailto:hello@example.com"
+            href="mailto:syedrabeet2002@gmail.com"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
