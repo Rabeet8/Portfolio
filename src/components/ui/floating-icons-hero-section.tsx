@@ -117,9 +117,6 @@ const FloatingIconsHero = React.forwardRef<
       </div>
 
       <div className="relative z-10 flex flex-col items-center gap-4 px-6 text-center">
-        <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-          Tech Stack I Use
-        </h2>
       </div>
     </div>
   );

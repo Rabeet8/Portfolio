@@ -246,6 +246,9 @@ export function TechStackSection() {
         <h2 className="text-3xl md:text-5xl font-bold text-foreground">
           Tools & Technologies
         </h2>
+        <p className="text-muted-foreground mt-2 text-base md:text-lg">
+          Technologies and tools I work with to build modern, scalable applications.
+        </p>
       </div>
       <FloatingIconsHero icons={techIcons} />
     </section>
