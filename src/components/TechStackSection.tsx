@@ -1,10 +1,11 @@
 import { Code2, Database, Wrench } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { motion } from "framer-motion";
+import nextjsIcon from "@/assets/icons8-nextjs-48.png";
 
 type TechItem = {
   name: string;
-  icon: string;
+  icon: string | React.ReactNode;
   invertDark?: boolean;
 };
 
@@ -14,12 +15,32 @@ type TechCategory = {
   items: TechItem[];
 };
 
+const GithubIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+  </svg>
+);
+
+const VercelIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-1">
+    <path d="M24 22.525H0l12-21.05 12 21.05z" />
+  </svg>
+);
+
+
+
+const ExpressIcon = () => (
+  <span className="font-bold text-lg leading-none tracking-tighter" style={{ fontFamily: 'sans-serif' }}>
+    ex
+  </span>
+);
+
 const techCategories: TechCategory[] = [
   {
     title: "FRONTEND",
     icon: <Code2 className="w-4 h-4" />,
     items: [
-      { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/000000", invertDark: true },
+      { name: "Next.js", icon: nextjsIcon, invertDark: true },
       { name: "React.js", icon: "https://cdn.simpleicons.org/react/61DAFB" },
       { name: "React Native", icon: "https://cdn.simpleicons.org/react/61DAFB" },
       { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
@@ -37,19 +58,18 @@ const techCategories: TechCategory[] = [
       { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
       { name: "Firebase", icon: "https://cdn.simpleicons.org/firebase/DD2C00" },
       { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
-      { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1" },
       { name: "FastAPI", icon: "https://cdn.simpleicons.org/fastapi/009688" },
       { name: "Supabase", icon: "https://cdn.simpleicons.org/supabase/3FCF8E" },
-      { name: "Express.js", icon: "https://cdn.simpleicons.org/express/000000", invertDark: true },
+      { name: "Express.js", icon: <ExpressIcon /> },
     ],
   },
   {
     title: "TOOLS & VERSION CONTROL",
     icon: <Wrench className="w-4 h-4" />,
     items: [
-      { name: "GitHub", icon: "https://cdn.simpleicons.org/github/181717", invertDark: true },
+      { name: "GitHub", icon: <GithubIcon /> },
       { name: "GitHub Actions", icon: "https://cdn.simpleicons.org/githubactions/2088FF" },
-      { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel/000000", invertDark: true },
+      { name: "Vercel", icon: <VercelIcon /> },
     ],
   },
 ];
@@ -129,37 +149,20 @@ export function TechStackSection() {
                       whileTap={{ scale: 0.98 }}
                       className="flex items-center gap-3 text-foreground/80 hover:text-foreground transition-colors duration-200 cursor-default"
                     >
-                      {item.invertDark && typeof item.icon === 'string' ? (
-                        <>
-                          <img
-                            src={item.icon}
-                            alt={item.name}
-                            className="w-5 h-5 dark:hidden"
-                            loading="lazy"
-                            onError={(e) => {
-                              (e.target as HTMLImageElement).style.display = "none";
-                            }}
-                          />
-                          <img
-                            src={item.icon.replace(/000000|181717|2D3748|4479A1/, "ffffff")}
-                            alt={item.name}
-                            className="w-5 h-5 hidden dark:block"
-                            loading="lazy"
-                            onError={(e) => {
-                              (e.target as HTMLImageElement).style.display = "none";
-                            }}
-                          />
-                        </>
-                      ) : (
+                      {typeof item.icon === 'string' ? (
                         <img
-                          src={item.icon as string}
+                          src={item.icon}
                           alt={item.name}
-                          className="w-5 h-5"
+                          className={`w-5 h-5 ${item.invertDark ? 'dark:invert dark:brightness-200' : ''}`}
                           loading="lazy"
                           onError={(e) => {
                             (e.target as HTMLImageElement).style.display = "none";
                           }}
                         />
+                      ) : (
+                        <div className="w-5 h-5 flex items-center justify-center text-foreground shrink-0">
+                          {item.icon}
+                        </div>
                       )}
                       <span className="text-sm font-medium">{item.name}</span>
                     </motion.div>
