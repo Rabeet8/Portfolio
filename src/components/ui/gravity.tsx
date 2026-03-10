@@ -300,6 +300,12 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
         },
       })
 
+      // Ensure the Matter.js canvas is on top for mouse interaction
+      render.current.canvas.style.position = "absolute"
+      render.current.canvas.style.top = "0"
+      render.current.canvas.style.left = "0"
+      render.current.canvas.style.zIndex = "10"
+
       const mouse = Mouse.create(render.current.canvas)
       mouseConstraint.current = MouseConstraint.create(engine.current, {
         mouse: mouse,
