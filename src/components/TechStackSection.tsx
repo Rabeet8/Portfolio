@@ -1,4 +1,5 @@
 import { FloatingIconsHero, type FloatingIconsHeroProps } from "@/components/ui/floating-icons-hero-section";
+import { GravityTechStack } from "@/components/GravityTechStack";
 import * as React from "react";
 
 // --- Tech Stack SVG Icons ---
@@ -251,6 +252,9 @@ export function TechStackSection() {
         </p>
       </div>
       <FloatingIconsHero icons={techIcons} />
+      <div className="mt-10">
+        <GravityTechStack />
+      </div>
     </section>
   );
 }
