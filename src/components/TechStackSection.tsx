@@ -204,39 +204,39 @@ const IconRestAPI = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const techIcons: FloatingIconsHeroProps['icons'] = [
-  // Row 1
-  { id: 1, icon: IconReact, className: 'top-[6%] left-[8%]' },
-  { id: 2, icon: IconNextJS, className: 'top-[4%] left-[25%]' },
-  { id: 26, icon: IconOpenAI, className: 'top-[7%] left-[45%]' },
-  { id: 3, icon: IconJavaScript, className: 'top-[5%] right-[30%]' },
-  { id: 4, icon: IconTypeScript, className: 'top-[4%] right-[12%]' },
-  // Row 2
-  { id: 5, icon: IconTailwind, className: 'top-[18%] left-[5%]' },
-  { id: 9, icon: IconAndroid, className: 'top-[20%] left-[22%]' },
-  { id: 6, icon: IconMaterialUI, className: 'top-[16%] left-[42%]' },
-  { id: 10, icon: IconiOS, className: 'top-[19%] right-[28%]' },
-  { id: 8, icon: IconExpo, className: 'top-[17%] right-[8%]' },
-  // Row 3
-  { id: 7, icon: IconReactNative, className: 'top-[32%] left-[6%]' },
-  { id: 15, icon: IconAxios, className: 'top-[34%] left-[20%]' },
-  { id: 14, icon: IconRestAPI, className: 'top-[30%] left-[40%]' },
-  { id: 13, icon: IconFastAPI, className: 'top-[33%] right-[25%]' },
-  { id: 12, icon: IconExpressJS, className: 'top-[31%] right-[6%]' },
-  // Row 4
-  { id: 11, icon: IconNodeJS, className: 'top-[48%] left-[8%]' },
-  { id: 16, icon: IconSolidity, className: 'top-[50%] left-[28%]' },
-  { id: 17, icon: IconHardhat, className: 'top-[46%] left-[48%]' },
-  { id: 18, icon: IconEthers, className: 'top-[50%] right-[22%]' },
-  { id: 19, icon: IconWeb3, className: 'top-[48%] right-[5%]' },
-  // Row 5
-  { id: 20, icon: IconFirebase, className: 'top-[64%] left-[5%]' },
-  { id: 22, icon: IconGit, className: 'top-[66%] left-[24%]' },
-  { id: 24, icon: IconCICD, className: 'top-[62%] left-[44%]' },
-  { id: 23, icon: IconGitHub, className: 'top-[65%] right-[26%]' },
-  { id: 21, icon: IconGoogleCloud, className: 'top-[63%] right-[8%]' },
-  // Row 6
-  { id: 25, icon: IconPostman, className: 'top-[80%] left-[15%]' },
-  { id: 27, icon: IconLLM, className: 'top-[82%] left-[45%]' },
+  // Row 1 (5 icons)
+  { id: 1, icon: IconReact, className: 'top-[5%] left-[10%]' },
+  { id: 2, icon: IconNextJS, className: 'top-[5%] left-[30%]' },
+  { id: 26, icon: IconOpenAI, className: 'top-[5%] left-[50%]' },
+  { id: 3, icon: IconJavaScript, className: 'top-[5%] left-[70%]' },
+  { id: 4, icon: IconTypeScript, className: 'top-[5%] left-[88%]' },
+  // Row 2 (5 icons)
+  { id: 5, icon: IconTailwind, className: 'top-[20%] left-[10%]' },
+  { id: 6, icon: IconMaterialUI, className: 'top-[20%] left-[30%]' },
+  { id: 9, icon: IconAndroid, className: 'top-[20%] left-[50%]' },
+  { id: 10, icon: IconiOS, className: 'top-[20%] left-[70%]' },
+  { id: 8, icon: IconExpo, className: 'top-[20%] left-[88%]' },
+  // Row 3 (5 icons)
+  { id: 7, icon: IconReactNative, className: 'top-[35%] left-[10%]' },
+  { id: 15, icon: IconAxios, className: 'top-[35%] left-[30%]' },
+  { id: 14, icon: IconRestAPI, className: 'top-[35%] left-[50%]' },
+  { id: 13, icon: IconFastAPI, className: 'top-[35%] left-[70%]' },
+  { id: 12, icon: IconExpressJS, className: 'top-[35%] left-[88%]' },
+  // Row 4 (5 icons)
+  { id: 11, icon: IconNodeJS, className: 'top-[50%] left-[10%]' },
+  { id: 16, icon: IconSolidity, className: 'top-[50%] left-[30%]' },
+  { id: 17, icon: IconHardhat, className: 'top-[50%] left-[50%]' },
+  { id: 18, icon: IconEthers, className: 'top-[50%] left-[70%]' },
+  { id: 19, icon: IconWeb3, className: 'top-[50%] left-[88%]' },
+  // Row 5 (5 icons)
+  { id: 20, icon: IconFirebase, className: 'top-[65%] left-[10%]' },
+  { id: 22, icon: IconGit, className: 'top-[65%] left-[30%]' },
+  { id: 24, icon: IconCICD, className: 'top-[65%] left-[50%]' },
+  { id: 23, icon: IconGitHub, className: 'top-[65%] left-[70%]' },
+  { id: 21, icon: IconGoogleCloud, className: 'top-[65%] left-[88%]' },
+  // Row 6 (2 icons centered)
+  { id: 25, icon: IconPostman, className: 'top-[80%] left-[38%]' },
+  { id: 27, icon: IconLLM, className: 'top-[80%] left-[58%]' },
 ];
 
 export function TechStackSection() {
