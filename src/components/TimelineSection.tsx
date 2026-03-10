@@ -43,7 +43,7 @@ const timelineData = [
     title: "Testing",
     date: "Phase 4",
     content:
-      "I validate the application through functional testing, debugging, and performance checks. Issues are identified early through test-cases and real usage scenarios to ensure the product is stable and reliable.",
+      "I validate the application through functional testing, debugging, and performance checks. Issues are identified early through test cases and real usage scenarios to ensure the product is stable and reliable.",
     category: "QA",
     icon: FlaskConical,
     relatedIds: [3, 5],
