@@ -1,6 +1,7 @@
 import { Code2, Database, Wrench } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import React, { useRef } from "react";
 import nextjsIcon from "@/assets/icons8-nextjs-48.png";
 
 type TechItem = {
@@ -97,6 +98,51 @@ const itemVariants = {
   }
 };
 
+const TiltCard = ({ children }: { children: React.ReactNode }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["12deg", "-12deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-12deg", "12deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3 group hover:shadow-xl transition-shadow duration-300"
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 export function TechStackSection() {
   return (
     <section className="py-16 bg-background">
@@ -120,9 +166,9 @@ export function TechStackSection() {
           <motion.li
             key={category.title}
             variants={itemVariants}
-            className="min-h-[14rem] list-none"
+            className="min-h-[14rem] list-none perspective-[1000px]"
           >
-            <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3 group hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+            <TiltCard>
               <GlowingEffect
                 spread={40}
                 glow={true}
@@ -131,9 +177,12 @@ export function TechStackSection() {
                 inactiveZone={0.01}
                 borderWidth={3}
               />
-              <div className="relative flex h-full flex-col gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6 transition-all duration-300">
+              <div
+                className="relative flex h-full flex-col gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6 transition-all duration-300 pointer-events-none"
+                style={{ transform: "translateZ(50px)" }}
+              >
                 {/* Category Header */}
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center gap-2 mb-2 pointer-events-auto">
                   <span className="text-muted-foreground">{category.icon}</span>
                   <h3 className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
                     {category.title}
@@ -141,7 +190,7 @@ export function TechStackSection() {
                 </div>
 
                 {/* Tech Items */}
-                <div className="space-y-4">
+                <div className="space-y-4 pointer-events-auto">
                   {category.items.map((item) => (
                     <motion.div
                       key={item.name}
@@ -169,7 +218,7 @@ export function TechStackSection() {
                   ))}
                 </div>
               </div>
-            </div>
+            </TiltCard>
           </motion.li>
         ))}
       </motion.ul>
