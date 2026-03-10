@@ -252,6 +252,9 @@ export function TechStackSection() {
         </p>
       </div>
       <FloatingIconsHero icons={techIcons} />
+      <div className="mt-10">
+        <GravityTechStack />
+      </div>
     </section>
   );
 }
