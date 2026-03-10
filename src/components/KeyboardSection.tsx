@@ -24,10 +24,10 @@ export function KeyboardSection() {
     <section className="py-16 bg-background overflow-hidden">
       <div className="max-w-5xl mx-auto px-6 text-center mb-10">
         <p className="text-sm text-muted-foreground uppercase tracking-widest mb-2">
-          Always Typing
+          CODE. BUILD. SHIP
         </p>
         <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-          Built With Passion
+          TURNING IDEAS INTO SOFTWARE
         </h2>
       </div>
       <div className="flex justify-center overflow-x-auto">

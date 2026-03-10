@@ -270,9 +270,8 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
         const { x, y } = body.position
         const rotation = body.angle * (180 / Math.PI)
 
-        element.style.transform = `translate(${
-          x - element.offsetWidth / 2
-        }px, ${y - element.offsetHeight / 2}px) rotate(${rotation}deg)`
+        element.style.transform = `translate(${x - element.offsetWidth / 2
+          }px, ${y - element.offsetHeight / 2}px) rotate(${rotation}deg)`
       })
 
       frameId.current = requestAnimationFrame(updateElements)
@@ -318,17 +317,17 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
       })
 
       const walls = [
-        Bodies.rectangle(width / 2, height + 10, width, 20, {
+        Bodies.rectangle(width / 2, height + 100, width * 2, 200, {
           isStatic: true,
           friction: 1,
           render: { visible: debug },
         }),
-        Bodies.rectangle(width + 10, height / 2, 20, height, {
+        Bodies.rectangle(width + 100, height / 2, 200, height * 2, {
           isStatic: true,
           friction: 1,
           render: { visible: debug },
         }),
-        Bodies.rectangle(-10, height / 2, 20, height, {
+        Bodies.rectangle(-100, height / 2, 200, height * 2, {
           isStatic: true,
           friction: 1,
           render: { visible: debug },
@@ -337,7 +336,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
 
       if (addTopWall) {
         walls.push(
-          Bodies.rectangle(width / 2, -10, width, 20, {
+          Bodies.rectangle(width / 2, -100, width * 2, 200, {
             isStatic: true,
             friction: 1,
             render: { visible: debug },

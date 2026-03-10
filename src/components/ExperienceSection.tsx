@@ -80,7 +80,7 @@ const experienceData = [
 export function ExperienceSection() {
   return (
     <section className="py-16 bg-background">
-      <div className="max-w-5xl mx-auto px-6 text-center mb-6">
+      <div className="max-w-5xl mx-auto px-6 text-center mb-10">
         <p className="text-sm text-muted-foreground uppercase tracking-widest mb-2">
           Career Journey
         </p>

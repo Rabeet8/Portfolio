@@ -2,15 +2,15 @@ import { motion } from "framer-motion";
 import { LayoutGrid, Monitor, Search, Sparkles, PenTool, Target } from "lucide-react";
 
 const leftPills = [
-  { icon: LayoutGrid, label: "Design Systems", color: "hsl(25, 95%, 55%)" },
-  { icon: Monitor, label: "UI/UX", color: "hsl(160, 60%, 45%)" },
-  { icon: Search, label: "Research", color: "hsl(210, 100%, 55%)" },
+  { icon: LayoutGrid, label: "Design Systems", color: "hsl(25, 95%, 55%)", transformClass: "translate-x-0" },
+  { icon: Monitor, label: "UI/UX", color: "hsl(160, 60%, 45%)", transformClass: "-translate-x-12" },
+  { icon: Search, label: "Research", color: "hsl(210, 100%, 55%)", transformClass: "-translate-x-4" },
 ];
 
 const rightPills = [
-  { icon: Sparkles, label: "Animation", color: "hsl(145, 80%, 50%)" },
-  { icon: PenTool, label: "Prototyping", color: "hsl(310, 80%, 60%)" },
-  { icon: Target, label: "Strategy", color: "hsl(45, 90%, 55%)" },
+  { icon: Sparkles, label: "Animation", color: "hsl(145, 80%, 50%)", transformClass: "translate-x-0" },
+  { icon: PenTool, label: "Prototyping", color: "hsl(310, 80%, 60%)", transformClass: "translate-x-12" },
+  { icon: Target, label: "Strategy", color: "hsl(45, 90%, 55%)", transformClass: "translate-x-4" },
 ];
 
 export function AboutSection() {
@@ -34,7 +34,7 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.15, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="flex items-center gap-3 rounded-full bg-card border border-border px-5 py-3 shadow-lg"
+                className={`flex items-center gap-3 rounded-full bg-card border border-border px-5 py-3 shadow-lg ${pill.transformClass}`}
               >
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center"
@@ -72,7 +72,7 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.15, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="flex items-center gap-3 rounded-full bg-card border border-border px-5 py-3 shadow-lg"
+                className={`flex items-center gap-3 rounded-full bg-card border border-border px-5 py-3 shadow-lg ${pill.transformClass}`}
               >
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center"

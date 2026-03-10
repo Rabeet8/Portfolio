@@ -80,9 +80,14 @@ export default function RuixenBentoCards() {
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-12 text-center">
-          My Services
-        </h2>
+        <div className="max-w-5xl mx-auto px-6 text-center mb-10">
+          <p className="text-sm text-muted-foreground uppercase tracking-widest mb-2">
+            Services
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+            The Value I Provide
+          </h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
           {/* Row 1: 2 cards */}
           <PlusCard

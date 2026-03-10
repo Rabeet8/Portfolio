@@ -27,8 +27,8 @@ const techItems: { name: string; color: string; textColor: string }[] = [
 export function GravityTechStack() {
   return (
     <div className="w-full max-w-5xl mx-auto px-6">
-      <div className="relative h-[420px] md:h-[500px] rounded-2xl border border-border/40 overflow-hidden bg-muted/20">
-        <Gravity gravity={{ x: 0, y: 1 }} grabCursor={true} resetOnResize={true} addTopWall={false} autoStart={true}>
+      <div className="relative h-[210px] md:h-[250px] rounded-2xl border border-gray-300 dark:border-gray-700 overflow-hidden bg-muted/20">
+        <Gravity key="gravity-section" gravity={{ x: 0, y: 1 }} grabCursor={true} resetOnResize={true} addTopWall={false} autoStart={true}>
           {techItems.map((tech, i) => (
             <MatterBody
               key={tech.name}

@@ -5,12 +5,12 @@ import { Menu, X } from "lucide-react";
 const sections = [
   { label: "Home", id: "hero" },
   { label: "About", id: "about" },
-  { label: "Bento", id: "bento" },
-  { label: "Timeline", id: "timeline" },
+  { label: "Services", id: "bento" },
+  { label: "Work Process", id: "timeline" },
   { label: "Tech Stack", id: "tech-stack" },
   { label: "Experience", id: "experience" },
   { label: "Projects", id: "projects" },
-  { label: "Keyboard", id: "keyboard" },
+  { label: "Follow", id: "keyboard" },
   { label: "Contact", id: "footer" },
 ];
 

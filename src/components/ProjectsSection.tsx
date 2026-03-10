@@ -1,19 +1,29 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X, ExternalLink } from "lucide-react";
 import projectSnapntradeMain from "@/assets/project-snapntrade-main.png";
-import projectSnapntrade from "@/assets/project-snapntrade.png";
-import projectSnapntradeLogin from "@/assets/project-snapntrade-login.png";
+import pixel8Pro from "@/assets/iMockup - Google Pixel 8 Pro.png";
+import pixel9Pro3 from "@/assets/iMockup - Google Pixel 9 Pro (3).png";
+import pixel9Pro4 from "@/assets/iMockup - Google Pixel 9 Pro (4).png";
+import pixel9Pro5 from "@/assets/iMockup - Google Pixel 9 Pro (5).png";
+import pixel9Pro6 from "@/assets/iMockup - Google Pixel 9 Pro (6).png";
+import pixel9Pro7 from "@/assets/iMockup - Google Pixel 9 Pro (7).png";
+import pixel9Pro12 from "@/assets/iMockup - Google Pixel 9 Pro (12).png";
 import projectPromptKitMain from "@/assets/project-promptkit-main.png";
-import projectPromptKitHome from "@/assets/project-promptkit-home.jpg";
 import projectPromptKitLogin from "@/assets/project-promptkit-login.jpg";
 import projectPromptKitProfile from "@/assets/project-promptkit-profile.jpg";
-import projectPromptKitCost from "@/assets/project-promptkit-cost.jpg";
+import projectPromptKitHome from "@/assets/project-promptkit-home.jpg";
 import projectPromptKitToken from "@/assets/project-promptkit-token.jpg";
+import projectPromptKitP2 from "@/assets/p-p2 (1).jpg";
+import projectPromptKitS from "@/assets/p-s (1).jpg";
+import projectPromptKitCost from "@/assets/project-promptkit-cost.jpg";
+
 import projectThriveMain from "@/assets/project-thrive-main.png";
-import projectErc20Main from "@/assets/project-erc20-main.png";
+import projectErc20New from "@/assets/project-erc20-new.png";
+import projectTokenstashNew from "@/assets/project-tokenstash-new.png";
+import projectDocvouchNew from "@/assets/project-docvouch-new.png";
 
 interface ProjectImages {
   title: string;
@@ -22,12 +32,12 @@ interface ProjectImages {
 
 const projectImages: ProjectImages[] = [
   {
-    title: "SnapNTrade - Marketplace App",
-    images: [projectSnapntradeMain, projectSnapntrade, projectSnapntradeLogin],
+    title: "snapNtrade - Marketplace App",
+    images: [projectSnapntradeMain, pixel8Pro, pixel9Pro3, pixel9Pro4, pixel9Pro5, pixel9Pro6, pixel9Pro7, pixel9Pro12],
   },
   {
     title: "PromptKit - AI Utility App",
-    images: [projectPromptKitMain, projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken],
+    images: [projectPromptKitMain, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken, projectPromptKitP2, projectPromptKitS],
   },
   {
     title: "Thrive - Plant Care App",
@@ -35,7 +45,15 @@ const projectImages: ProjectImages[] = [
   },
   {
     title: "ERC20 Factory - Token Creator",
-    images: [projectErc20Main],
+    images: [projectErc20New],
+  },
+  {
+    title: "TokenStash - DApp for stacking Erc20 tokens",
+    images: [projectTokenstashNew],
+  },
+  {
+    title: "DocVouch - Implementation of PoE",
+    images: [projectDocvouchNew],
   },
 ];
 
@@ -49,6 +67,10 @@ function ProjectImageModal({
   project: ProjectImages | null;
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  React.useEffect(() => {
+    if (open) setCurrentIndex(0);
+  }, [open, project]);
 
   if (!project) return null;
 
@@ -77,16 +99,19 @@ function ProjectImageModal({
             </button>
           )}
 
-          <div className="flex items-center justify-center w-full px-12 py-4">
-            <motion.img
-              key={currentIndex}
-              src={project.images[currentIndex]}
-              alt={`${project.title} screenshot ${currentIndex + 1}`}
-              className="max-h-[65vh] w-auto object-contain rounded-md"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-            />
+          <div className="flex items-center justify-center w-full px-12 py-4 h-[65vh]">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentIndex}
+                src={project.images[currentIndex]}
+                alt={`${project.title} screenshot ${currentIndex + 1}`}
+                className="max-h-full w-auto object-contain rounded-md"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              />
+            </AnimatePresence>
           </div>
 
           {totalImages > 1 && (
@@ -116,7 +141,17 @@ export function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<ProjectImages | null>(null);
 
   React.useEffect(() => {
-    const images = [projectSnapntradeMain, projectSnapntrade, projectSnapntradeLogin, projectPromptKitMain, projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken, projectThriveMain, projectErc20Main];
+    const images = [
+      projectSnapntradeMain, pixel8Pro, pixel9Pro3, pixel9Pro4, pixel9Pro5, pixel9Pro6, pixel9Pro7, pixel9Pro12,
+      projectPromptKitMain, projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken, projectPromptKitP2, projectPromptKitS,
+      projectThriveMain, projectErc20New, projectTokenstashNew, projectDocvouchNew
+    ];
+
+    // Properly preload images so there is no flickering when sliding
+    images.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
   }, []);
 
   const openModal = (projectIndex: number) => {
@@ -130,14 +165,14 @@ export function ProjectsSection() {
     {
       title: "SnapNTrade - Marketplace App",
       description:
-        "A mobile-first marketplace application enabling users to buy and sell electronics, gadgets, and more. Features include category browsing, real-time chat, boosted listings, and a clean intuitive UI designed for seamless trading experiences.",
+        "snapNtrade is a trust-first marketplace for buying and selling electronics, built to eliminate fraud and uncertainty. It requires sellers to capture real-time photos inside the app, preventing fake or reused images. AI analyzes listings to provide neutral product condition insights and reduce disputes. Every completed sale generates a digitally verifiable invoice as proof of ownership. With a buyer-first model and privacy-safe location sharing, snapNtrade makes trading safer and more reliable.",
       link: "https://play.google.com/store/apps/details?id=com.snapNtrade",
-      badges: ["React Native", "Firebase", "Node.js", "Express"],
+      badges: ["React Native", "Firebase", "Fast API", "Zustand"],
       content: (
         <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(0)}>
           <img
             src={projectSnapntradeMain}
-            alt="SnapNTrade Marketplace App"
+            alt="snapNtrade Marketplace App"
             loading="eager"
             className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
           />
@@ -149,7 +184,7 @@ export function ProjectsSection() {
       description:
         "PromptKit is a powerful all-in-one AI utility app that helps you analyze prompts, generate JSON schemas, estimate token costs, and work faster with LLMs. Everything you need for building with AI.",
       link: "https://promptkit-landing-page.vercel.app/",
-      badges: ["Flutter", "Dart", "OpenAI API", "Firebase"],
+      badges: ["React Native", "Expo", "Firebase"],
       content: (
         <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(1)}>
           <img
@@ -166,7 +201,7 @@ export function ProjectsSection() {
       description:
         "Thrive is a comprehensive plant care mobile app that helps users track watering schedules and monitor plant growth through visual timelines, ensuring your houseplants remain healthy with timely reminders and easy logging of care activities.",
       link: "https://github.com/Rabeet8/Thrive",
-      badges: ["Flutter", "Dart", "Firebase"],
+      badges: ["React Native", "Expo", "Supabase"],
       content: (
         <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(2)}>
           <img
@@ -183,12 +218,46 @@ export function ProjectsSection() {
       description:
         "This project allows users to quickly create ERC20 tokens without the need for coding. Create, customize, and tokenize — unlocking blockchain potential for everyone.",
       link: "https://github.com/Rabeet8/ERC20Factory",
-      badges: ["Solidity", "Ethers.js", "React", "Web3"],
+      badges: ["Solidity", "Ethers.js", "React", "RainbowKit"],
       content: (
         <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(3)}>
           <img
-            src={projectErc20Main}
+            src={projectErc20New}
             alt="ERC20 Factory Token Creator"
+            loading="eager"
+            className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "TokenStash - DApp for stacking Erc20 tokens",
+      description:
+        "TokenStash is a decentralized application (DApp) for staking ERC20 tokens and earning rewards using smart contracts on the Ethereum blockchain.",
+      link: "https://github.com/Rabeet8/TokenStash",
+      badges: ["Solidity", "Ethers.js", "React", "RainbowKit"],
+      content: (
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(4)}>
+          <img
+            src={projectTokenstashNew}
+            alt="TokenStash DApp for stacking Erc20 tokens"
+            loading="eager"
+            className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "DocVouch - Implementation of PoE",
+      description:
+        "DocVouch is a decentralized application and implementation of Proof-Of-Existence (PoE) that securely timestamps and verifies document existence on the blockchain, ensuring immutability, transparency, and privacy without storing the actual document content.",
+      link: "https://github.com/Rabeet8/DocVouch",
+      badges: ["Solidity", "Ethers.js", "React", "RainbowKit"],
+      content: (
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(5)}>
+          <img
+            src={projectDocvouchNew}
+            alt="DocVouch - Implementation of PoE"
             loading="eager"
             className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
           />

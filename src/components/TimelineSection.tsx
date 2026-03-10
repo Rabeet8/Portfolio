@@ -1,4 +1,4 @@
-import { Lightbulb, Palette, Code2, FlaskConical, Rocket } from "lucide-react";
+import { Lightbulb, Palette, Code2, FlaskConical, Rocket, Network } from "lucide-react";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 
 const timelineData = [
@@ -7,7 +7,7 @@ const timelineData = [
     title: "Ideation",
     date: "Phase 1",
     content:
-      "I start every project by deeply understanding the problem space. Through user interviews, competitive analysis, and stakeholder workshops, I identify core pain points and opportunities that inform the entire product direction.",
+      "I begin by understanding the product problem and defining the core requirements. Through discussions with stakeholders and analyzing existing solutions, I identify the key features and technical challenges that shape the direction of development.",
     category: "Research",
     icon: Lightbulb,
     relatedIds: [2],
@@ -16,12 +16,12 @@ const timelineData = [
   },
   {
     id: 2,
-    title: "Design",
+    title: "Architecture",
     date: "Phase 2",
     content:
-      "I translate research insights into intuitive interfaces. My process includes wireframing, high-fidelity prototyping in Figma, and iterating through design critiques to ensure every pixel serves both aesthetics and usability.",
-    category: "Design",
-    icon: Palette,
+      "I design the system architecture and plan the technical stack. This includes defining application structure, API communication patterns, database models, and choosing the right frameworks to ensure scalability and maintainability.",
+    category: "Planning",
+    icon: Network,
     relatedIds: [1, 3],
     status: "completed" as const,
     energy: 90,
@@ -31,7 +31,7 @@ const timelineData = [
     title: "Development",
     date: "Phase 3",
     content:
-      "I build production-grade frontends with React and TypeScript, focusing on component architecture, performance optimization, and accessibility. I write clean, maintainable code with thorough documentation.",
+      "I build scalable web and mobile applications using technologies like React, React Native, and Node.js. I focus on modular architecture, reusable components, and efficient state management while ensuring clean and maintainable code.",
     category: "Engineering",
     icon: Code2,
     relatedIds: [2, 4],
@@ -43,7 +43,7 @@ const timelineData = [
     title: "Testing",
     date: "Phase 4",
     content:
-      "I validate through a mix of automated tests, usability sessions, and A/B experiments. I measure real user metrics, gather qualitative feedback, and iterate rapidly to close gaps between expectation and experience.",
+      "I validate the application through functional testing, debugging, and performance checks. Issues are identified early through test cases and real usage scenarios to ensure the product is stable and reliable.",
     category: "QA",
     icon: FlaskConical,
     relatedIds: [3, 5],
@@ -52,10 +52,10 @@ const timelineData = [
   },
   {
     id: 5,
-    title: "Launch",
+    title: "Deployment",
     date: "Phase 5",
     content:
-      "I coordinate cross-functional releases with CI/CD pipelines, feature flags, and monitoring dashboards. Post-launch, I track adoption metrics and quickly triage issues to ensure a smooth rollout.",
+      "I handle production deployment including build generation, versioning, and release management. Applications are deployed to production environments with monitoring and updates to ensure smooth user experiences.",
     category: "Delivery",
     icon: Rocket,
     relatedIds: [4],
@@ -67,13 +67,13 @@ const timelineData = [
 export function TimelineSection() {
   return (
     <section className="py-10 bg-background">
-      <div className="max-w-5xl mx-auto px-6 text-center mb-6">
-        <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+      <div className="max-w-5xl mx-auto px-6 text-center mb-10">
+        <p className="text-sm text-muted-foreground uppercase tracking-widest mb-2">
+          Work Process
+        </p>
+        <h2 className="text-3xl md:text-5xl font-bold text-foreground">
           How I Work
         </h2>
-        <p className="text-muted-foreground text-lg">
-          An orbital view of my process — click any node to explore
-        </p>
       </div>
       <RadialOrbitalTimeline timelineData={timelineData} />
     </section>
