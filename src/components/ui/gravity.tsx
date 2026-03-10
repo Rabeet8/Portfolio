@@ -509,6 +509,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
         <div
           ref={canvas}
           className={cn("relative w-full h-full overflow-hidden", className)}
+          style={{ touchAction: "none" }}
           {...props}
         >
           {children}
