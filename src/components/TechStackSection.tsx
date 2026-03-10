@@ -106,8 +106,9 @@ const TiltCard = ({ children }: { children: React.ReactNode }) => {
   const mouseXSpring = useSpring(x);
   const mouseYSpring = useSpring(y);
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["12deg", "-12deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-12deg", "12deg"]);
+  // Rotate mapping - max 4 degrees of rotation feeling perfectly polished
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["6deg", "-6deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-6deg", "6deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!ref.current) return;
@@ -179,7 +180,7 @@ export function TechStackSection() {
               />
               <div
                 className="relative flex h-full flex-col gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6 transition-all duration-300 pointer-events-none"
-                style={{ transform: "translateZ(50px)" }}
+                style={{ transform: "translateZ(30px)" }}
               >
                 {/* Category Header */}
                 <div className="flex items-center gap-2 mb-2 pointer-events-auto">
