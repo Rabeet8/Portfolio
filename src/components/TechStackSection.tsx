@@ -106,7 +106,6 @@ const TiltCard = ({ children }: { children: React.ReactNode }) => {
   const mouseXSpring = useSpring(x);
   const mouseYSpring = useSpring(y);
 
-  // Rotate mapping - max 4 degrees of rotation feeling perfectly polished
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["6deg", "-6deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-6deg", "6deg"]);
 

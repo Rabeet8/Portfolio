@@ -1,4 +1,5 @@
 import { Timeline } from "@/components/ui/timeline";
+import { ExternalLink } from "lucide-react";
 
 const experienceData = [
   {
@@ -16,12 +17,21 @@ const experienceData = [
           <li>Implemented new features and refined existing functionalities based on client feedback, aligning product improvements with user and business requirements.</li>
           <li>Managed the complete release pipeline including build generation, store submission, versioning, and production rollout for iOS and Android apps.</li>
         </ul>
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex gap-2 flex-wrap mb-4">
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">React Native</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">TypeScript</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Reanimated</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">SVG</span>
         </div>
+        <a
+          href="https://drive.google.com/file/d/1B63ODDjn1kyYs8Cm7Vqm1_WZf3mDwQR-/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors group"
+        >
+          View Experience Letter
+          <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </a>
       </div>
     ),
   },
@@ -40,13 +50,22 @@ const experienceData = [
           <li>Integrated smart contracts with frontend interfaces and backend APIs, ensuring smooth communication between on-chain contract logic and off-chain application services.</li>
           <li>Developed decentralized application using Next.js workflows by connecting user-facing frontend components with smart contract functions, enabling secure transaction execution and real-time blockchain interaction.</li>
         </ul>
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex gap-2 flex-wrap mb-4">
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Solidity</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Ethers.js</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Hardhat</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Next.js</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Web3</span>
         </div>
+        <a
+          href="https://drive.google.com/file/d/1xiExOgy4jNhetdIuIBvTN5107Zq8l0KT/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors group"
+        >
+          View Experience Letter
+          <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </a>
       </div>
     ),
   },
@@ -65,13 +84,22 @@ const experienceData = [
           <li>Integrated backend APIs with frontend applications, enabling real-time rendering of transaction data and dynamic updates from off-chain services.</li>
           <li>Built decentralized application workflows by connecting frontend components with smart contract functions and backend services, enabling seamless interaction between users, APIs, and blockchain networks.</li>
         </ul>
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex gap-2 flex-wrap mb-4">
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">React.js</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Next.js</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Ethers.js</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">RainbowKit</span>
           <span className="text-xs bg-secondary text-secondary-foreground rounded-full px-3 py-1">Web3</span>
         </div>
+        <a
+          href="https://drive.google.com/file/d/1xiExOgy4jNhetdIuIBvTN5107Zq8l0KT/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors group"
+        >
+          View Experience Letter
+          <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </a>
       </div>
     ),
   },
