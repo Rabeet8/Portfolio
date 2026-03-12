@@ -42,7 +42,13 @@ export function DotText({ text, className }: DotTextProps) {
     const offCtx = offscreen.getContext("2d");
     if (!offCtx) return;
 
-    const fontSize = Math.min(w / (text.length * 0.52), h * 0.65);
+    // Better font size calculation for mobile:
+    // On small screens (w < 640), use a more conservative multiplier
+    const isMobile = w < 640;
+    const fontSize = isMobile 
+      ? Math.min(w / (text.length * 0.65), h * 0.5) 
+      : Math.min(w / (text.length * 0.52), h * 0.65);
+    
     offCtx.fillStyle = "#ffffff";
     offCtx.font = `900 ${fontSize}px 'Poppins', sans-serif`;
     offCtx.textAlign = "center";
@@ -52,7 +58,11 @@ export function DotText({ text, className }: DotTextProps) {
     const imageData = offCtx.getImageData(0, 0, w, h);
     const pixels = imageData.data;
 
-    const gap = Math.max(2, Math.floor(fontSize / 30));
+    // Reduce intensity (increase gap) on mobile to keep it clean
+    const gap = isMobile 
+      ? Math.max(4, Math.floor(fontSize / 15)) // Less dense on mobile
+      : Math.max(2, Math.floor(fontSize / 30)); // Original density for desktop
+      
     const particles: Particle[] = [];
 
     for (let y = 0; y < h; y += gap) {
