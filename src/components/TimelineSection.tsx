@@ -1,4 +1,4 @@
-import { Lightbulb, Palette, Code2, FlaskConical, Rocket, Network } from "lucide-react";
+import { Lightbulb, Network, Code2, FlaskConical, Rocket } from "lucide-react";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 
 const timelineData = [
@@ -24,7 +24,7 @@ const timelineData = [
     icon: Network,
     relatedIds: [1, 3],
     status: "completed" as const,
-    energy: 90,
+    energy: 100,
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const timelineData = [
     icon: Code2,
     relatedIds: [2, 4],
     status: "in-progress" as const,
-    energy: 60,
+    energy: 100,
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const timelineData = [
     icon: FlaskConical,
     relatedIds: [3, 5],
     status: "pending" as const,
-    energy: 30,
+    energy: 100,
   },
   {
     id: 5,
@@ -66,8 +66,8 @@ const timelineData = [
 
 export function TimelineSection() {
   return (
-    <section className="py-10 bg-background">
-      <div className="max-w-5xl mx-auto px-6 text-center mb-10">
+    <section className="py-24 bg-black overflow-hidden relative">
+      <div className="max-w-5xl mx-auto px-6 text-center mb-10 relative z-10">
         <p className="text-sm text-muted-foreground uppercase tracking-widest mb-2">
           Work Process
         </p>

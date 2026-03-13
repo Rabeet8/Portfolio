@@ -134,25 +134,44 @@ All colors MUST be HSL.
 
 /* Custom Premium Scrollbar */
 ::-webkit-scrollbar {
-  width: 14px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--background));
+  background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted));
-  border-radius: 5px;
-  border: 2px solid hsl(var(--background));
+  background: #000000;
+  border-radius: 6px;
+  border: 2px solid #ffffff;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground));
+  background: #333333;
 }
 
 /* For Firefox */
 * {
   scrollbar-width: thin;
   scrollbar-color: hsl(var(--muted)) hsl(var(--background));
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 4px;
+  border: 2px solid #ffffff; /* This creates a gap effect */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #333333;
 }

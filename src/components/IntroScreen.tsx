@@ -27,7 +27,7 @@ export const IntroScreen = ({ onFinished }: { onFinished: () => void }) => {
       scale: 1.02,
       transition: {
         duration: 0.6,
-        ease: [0.22, 1, 0.36, 1] // Faster, smoother QuintOut ease
+        ease: [0.22, 1, 0.36, 1]
       },
     },
   };
