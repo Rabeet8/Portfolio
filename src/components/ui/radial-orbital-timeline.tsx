@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, animate } from "framer-motion";
 import { ArrowRight, Link, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -75,9 +75,16 @@ export default function RadialOrbitalTimeline({
         setActiveNodeId(id);
         setAutoRotate(false);
 
-        // Rotate to top (270 degrees)
+        // Smoothly rotate to top (270 degrees)
         const targetRotation = 270 - (index / timelineData.length) * 360;
-        setRotationAngle(targetRotation);
+        
+        // Use framer-motion's animate utility for a smooth transition
+        animate(rotationAngle, targetRotation, {
+          type: "spring",
+          stiffness: 60,
+          damping: 15,
+          onUpdate: (latest) => setRotationAngle(latest)
+        });
 
         const relatedItems = getRelatedItems(id);
         const newPulseEffect: Record<number, boolean> = {};
@@ -96,16 +103,18 @@ export default function RadialOrbitalTimeline({
   };
 
   useEffect(() => {
-    let rotationTimer: ReturnType<typeof setInterval>;
-
+    let frameId: number;
+    
     if (autoRotate) {
-      rotationTimer = setInterval(() => {
+      const updateRotation = () => {
         setRotationAngle((prev) => (prev + 0.1) % 360);
-      }, 50);
+        frameId = requestAnimationFrame(updateRotation);
+      };
+      frameId = requestAnimationFrame(updateRotation);
     }
 
     return () => {
-      if (rotationTimer) clearInterval(rotationTimer);
+      if (frameId) cancelAnimationFrame(frameId);
     };
   }, [autoRotate]);
 
@@ -134,11 +143,14 @@ export default function RadialOrbitalTimeline({
         
         {/* Core AI Orb */}
         <div className="relative z-10 w-24 h-24 rounded-full flex items-center justify-center">
-            <div className="absolute inset-0 rounded-full bg-indigo-500/20 blur-xl animate-pulse" />
-            <div className="absolute inset-2 rounded-full bg-blue-500/30 blur-lg" />
-            <div className="relative w-16 h-16 rounded-full overflow-hidden border border-white/20 shadow-[0_0_30px_rgba(79,70,229,0.4)]">
+            {/* Minimal Outer Halo */}
+            <div className="absolute inset-0 rounded-full bg-indigo-500/10" />
+            <div className="absolute inset-4 rounded-full bg-blue-500/20" />
+            
+            {/* Core */}
+            <div className="relative w-16 h-16 rounded-full overflow-hidden border border-white/30">
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-blue-400 to-cyan-300" />
-                <div className="absolute inset-3 bg-white/90 rounded-full blur-[1px] shadow-inner" />
+                <div className="absolute inset-4 bg-white rounded-full shadow-lg" />
             </div>
         </div>
 
