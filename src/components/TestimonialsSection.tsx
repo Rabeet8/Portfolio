@@ -14,10 +14,10 @@ export const TestimonialsSection = () => {
           >
 
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-              Recommendations
+              Testimonials
             </h2>
             <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
-              Kind words from colleagues, leaders, and community members I've had the pleasure of working with.
+              Kind words from clients and team members I've had the pleasure of working with.
             </p>
           </motion.div>
         </div>
