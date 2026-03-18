@@ -25,6 +25,15 @@ import projectErc20New from "@/assets/project-erc20-new.png";
 import projectTokenstashNew from "@/assets/project-tokenstash-new.png";
 import projectDocvouchNew from "@/assets/project-docvouch-new.png";
 
+import safeKarachiMain from "@/assets/karachi-main.png";
+import safeKarachi1 from "@/assets/karachi1.png";
+import safeKarachi2 from "@/assets/karachi2.png";
+import safeKarachi3 from "@/assets/karachi3.png";
+import safeKarachi4 from "@/assets/karachi4.png";
+import safeKarachi5 from "@/assets/karachi5.png";
+import safeKarachi6 from "@/assets/karachi6.png";
+import safeKarachi7 from "@/assets/karachi7.png";
+
 interface ProjectImages {
   title: string;
   images: string[];
@@ -38,6 +47,10 @@ const projectImages: ProjectImages[] = [
   {
     title: "PromptKit - AI Utility App",
     images: [projectPromptKitMain, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken, projectPromptKitP2, projectPromptKitS],
+  },
+  {
+    title: "Safe Karachi - Urban Safety Platform",
+    images: [safeKarachiMain, safeKarachi1, safeKarachi2, safeKarachi3, safeKarachi4, safeKarachi5, safeKarachi6, safeKarachi7],
   },
   {
     title: "Thrive - Plant Care App",
@@ -144,6 +157,7 @@ export function ProjectsSection() {
     const images = [
       projectSnapntradeMain, pixel8Pro, pixel9Pro3, pixel9Pro4, pixel9Pro5, pixel9Pro6, pixel9Pro7, pixel9Pro12,
       projectPromptKitMain, projectPromptKitHome, projectPromptKitLogin, projectPromptKitProfile, projectPromptKitCost, projectPromptKitToken, projectPromptKitP2, projectPromptKitS,
+      safeKarachiMain, safeKarachi1, safeKarachi2, safeKarachi3, safeKarachi4, safeKarachi5, safeKarachi6, safeKarachi7,
       projectThriveMain, projectErc20New, projectTokenstashNew, projectDocvouchNew
     ];
 
@@ -197,13 +211,30 @@ export function ProjectsSection() {
       ),
     },
     {
+      title: "Safe Karachi - Urban Safety Platform",
+      description:
+        "A community-driven interactive map and analytics platform for real-time urban safety monitoring and incident reporting in Karachi. Empowers citizens with historical crime replays, data-driven safety insights, and a sleek, responsive interface for a safer community.",
+      link: "https://safekarachi.vercel.app/",
+      badges: ["React", "Supabase", "Leaflet", "Tailwind"],
+      content: (
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(2)}>
+          <img
+            src={safeKarachiMain}
+            alt="Safe Karachi Urban Safety Platform"
+            loading="eager"
+            className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      ),
+    },
+    {
       title: "Thrive - Plant Care App",
       description:
         "Thrive is a comprehensive plant care mobile app that helps users track watering schedules and monitor plant growth through visual timelines, ensuring your houseplants remain healthy with timely reminders and easy logging of care activities.",
       link: "https://github.com/Rabeet8/Thrive",
       badges: ["React Native", "Expo", "Supabase"],
       content: (
-        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(2)}>
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(3)}>
           <img
             src={projectThriveMain}
             alt="Thrive Plant Care App"
@@ -220,7 +251,7 @@ export function ProjectsSection() {
       link: "https://github.com/Rabeet8/ERC20Factory",
       badges: ["Solidity", "Ethers.js", "React", "RainbowKit"],
       content: (
-        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(3)}>
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(4)}>
           <img
             src={projectErc20New}
             alt="ERC20 Factory Token Creator"
@@ -237,7 +268,7 @@ export function ProjectsSection() {
       link: "https://github.com/Rabeet8/TokenStash",
       badges: ["Solidity", "Ethers.js", "React", "RainbowKit"],
       content: (
-        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(4)}>
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(5)}>
           <img
             src={projectTokenstashNew}
             alt="TokenStash DApp for stacking Erc20 tokens"
@@ -254,7 +285,7 @@ export function ProjectsSection() {
       link: "https://github.com/Rabeet8/DocVouch",
       badges: ["Solidity", "Ethers.js", "React", "RainbowKit"],
       content: (
-        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(5)}>
+        <div className="h-full w-full cursor-pointer flex items-center justify-center" onClick={() => openModal(6)}>
           <img
             src={projectDocvouchNew}
             alt="DocVouch - Implementation of PoE"
