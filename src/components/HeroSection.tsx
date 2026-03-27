@@ -21,7 +21,7 @@ export function HeroSection() {
         </p>
 
         <a
-          href="https://drive.google.com/file/d/1hySdLLW1uV_weaA11j34YhkVyWKyA5mW/view?usp=sharing"
+          href="https://drive.google.com/file/d/1zbAaJBz_4bbqc7MSH6abC8DRY1jcK2zA/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 font-semibold text-background transition-transform active:scale-95 hover:scale-105"
