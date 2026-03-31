@@ -16,7 +16,7 @@ export function HeroSection() {
         </h1>
 
         <p className="mt-6 mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl">
-          I turn ideas into high-performance digital products using modern
+          I am Rabeet and I turn ideas into high-performance digital products using modern
           technologies and clean architecture.
         </p>
 
